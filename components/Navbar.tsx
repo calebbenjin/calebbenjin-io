@@ -69,6 +69,7 @@ const NavBar: any = styled.nav`
   align-items: center;
   padding: 1.5rem 0;
   position: relative;
+  z-index: 1;
 
   .MobileLogo {
     display: none;

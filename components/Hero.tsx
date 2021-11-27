@@ -4,16 +4,19 @@ import profileImage from '../public/profileImage.jpg'
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <div className="contentBox">
-        <h1 className="name">Caleb Benjamin</h1>
-        <h4 className="title">Frontend/UX Engineer</h4>
-        <p className="intro">I have robust problem-solving skills and proven experience in creating thoughtful digital experiences that lie at the interaction of beauty, functional, maintainable, scalable, and context. I also help developers build a faster web. Teaching and Writing about web development, serverless, and React / Next.js.</p>
-      </div>
-      <div className="ImageBox">
-        <Image src={profileImage} alt="ProfileImage" width="150" height="150" placeholder="blur" />
-      </div>
-    </HeroContainer>
+    <>
+      <HeroContainer>
+        <div className="contentBox">
+          <h1 className="name">Caleb Benjamin</h1>
+          <h4 className="title">Frontend/UX Engineer</h4>
+          <p className="intro">I have robust problem-solving skills and proven experience in creating thoughtful digital experiences that lie at the interaction of beauty, functional, maintainable, scalable, and context. I also help developers build a faster web. Teaching and Writing about web development, serverless, and React / Next.js.</p>
+        </div>
+        <div className="ImageBox">
+          <Image src={profileImage} alt="ProfileImage" width="150" height="150" placeholder="blur" />
+        </div>
+      </HeroContainer>
+    </>
+
   )
 }
 
