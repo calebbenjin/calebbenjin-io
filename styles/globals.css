@@ -7,6 +7,7 @@ body {
   background: #fafafa;
   color: #464646;
   font-size: 1rem;
+  line-height: 24px;
 }
 
 a {
@@ -21,6 +22,10 @@ a {
 .container {
   width: 60%;
   margin: 0 auto;
+}
+
+p {
+  color: #444444;
 }
 
 @media(max-width: 768px) {
