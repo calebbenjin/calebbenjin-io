@@ -11,7 +11,6 @@
 
 
 ## Overview
-***
 
 * `data/*` - MDX data that is used for blogs, newsletters, and code snippets.
 * `layouts/*` - The different page layouts each MDX category (blog, newsletter, snippets) uses.
