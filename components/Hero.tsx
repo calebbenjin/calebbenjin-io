@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="contentBox">
           <h1 className="name">Caleb Benjamin</h1>
           <h4 className="title">Frontend/UX Engineer</h4>
-          <p className="intro">I have robust problem-solving skills and proven experience in creating thoughtful digital experiences that lie at the interaction of beauty, functional, maintainable, scalable, and context. I also help developers build a faster web. Teaching and Writing about web development, serverless, and React / Next.js.</p>
+          <p className="intro">I have robust problem-solving skills, and proven experience in creating thoughtful digital products that lie at the interaction of beauty, and are  functional, maintainable, and has scalable context. I also help developers build a faster web app. I love Teaching and Writing about web development, serverless, React, and Next.js.</p>
         </div>
         <div className="ImageBox">
           <Image src={profileImage} alt="ProfileImage" width="150" height="150" placeholder="blur" />
