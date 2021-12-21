@@ -99,19 +99,6 @@ const packages = {
   ]
 };
 
-type projectsPlan = {
-  id: number;
-  logo: string;
-  previewImg: string;
-  name: string;
-  des: string;
-  github: string;
-  url: string;
-  tech: {
-      name: string;
-  }[];
-}[]
-
 const Projects = () => {
   const { projects, sideProjects } = packages;
   const [state, setState] = useState({
@@ -119,8 +106,8 @@ const Projects = () => {
     projectsPlan: projects,
   })
 
-  const handlePricingPlan = (plan: any) => {
-    if(plan === 'sideProjects') {
+  const handlePricingPlan = (project: any) => {
+    if(project === 'sideProjects') {
       setState({
         active: 'sideProjects',
         projectsPlan: sideProjects
