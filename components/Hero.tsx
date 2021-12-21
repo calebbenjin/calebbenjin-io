@@ -8,7 +8,7 @@ const Hero = () => {
       <HeroContainer>
         <div className="contentBox">
           <h1 className="name">Caleb Benjamin</h1>
-          <h4 className="title">Frontend/UX Engineer</h4>
+          <h4 className="title"><span>Frontend/UX Engineer at</span> Bojale-Labs</h4>
           <p className="intro">I have a robust problem-solving skill, and a proven experience in creating thoughtful digital products that lie at the interaction of beauty, that are  functional, maintainable, and has scalable context. I also help developers build a faster web app. I love Teaching and Writing about web development, serverless, React, and Next.js.</p>
         </div>
         <div className="ImageBox">
@@ -38,7 +38,11 @@ const HeroContainer = styled.div`
     }
 
     .title {
+      font-weight: 700;
 
+      span {
+        font-weight: 400;
+      }
     }
   }
 
