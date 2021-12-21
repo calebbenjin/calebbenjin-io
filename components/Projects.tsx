@@ -235,13 +235,12 @@ const ProjectSection = styled.section`
         transition: all 0.3s ease;
         color: #5d5c5c;
         &:hover {
-          font-size: 1.5rem;
-          color: #ccc;
+          color: #333;
         }
       }
     }
     .lang {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       list-style: none;
       text-align: left;
       margin-top: 2rem;
@@ -370,6 +369,7 @@ const ToggleButtons = styled.div`
   button {
     background: transparent;
     padding: 15px 30px;
+    white-space: nowrap;
     border: none;
     width: 100%;
     margin: 10px;
