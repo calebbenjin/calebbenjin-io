@@ -32,30 +32,36 @@ const techStackData = [
     icon: <SiRedux />,
   },
   {
-    id: 4,
+    id: 5,
     name: 'TypeScript',
     icon: <SiTypescript />,
   },
   {
-    id: 5,
+    id: 56,
+    name: 'Svelte.js',
+    icon: <SiTypescript />,
+  },
+  {
+    id: 6,
     name: 'Serverless',
     icon: <SiServerless />,
   },
   {
-    id: 6,
+    id: 7,
     name: 'Storybook',
     icon: <SiStorybook />,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Tailwindcss',
     icon: <SiTailwindcss />,
   },
   {
-    id: 8,
+    id: 9,
     name: 'SASS',
     icon: <SiSass />,
   },
+  
 ]
 
 const TechStack = () => {
@@ -73,28 +79,35 @@ const StackSection = styled.section`
   margin-bottom: 2rem;
   
   .techContainer {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
     width: 70%;
     margin-top: 1rem;
   }
 
   .card {
     background: #fff;
-    padding: 5px 10px;
+    padding: 10px;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
     margin-right: 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;
     font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span { 
+      margin-right: 5px;
+    }
   }
 
   @media(max-width: 768px) {
     .techContainer {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       width: 100%;
       margin-top: 1rem;
       margin: 0 auto;
@@ -102,7 +115,7 @@ const StackSection = styled.section`
     
     .card {
       margin-bottom: 0.5rem;
-      padding: 3px 8px;
+      padding: 8px;
       text-align: center;
     }
   }
