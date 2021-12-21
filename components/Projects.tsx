@@ -12,8 +12,8 @@ const packages = {
       previewImg: "Preview Image",
       name: 'Ricnos Logistic',
       des: 'A logistice management application logistice management application',
-      github: "github-link",
-      url: "app-url",
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
       tech: [
         {name: "Next.js"},
         {name: "Chakara-ui"},
@@ -26,8 +26,8 @@ const packages = {
       previewImg: "Preview Image",
       name: 'Svelteui',
       des: 'A logistice management application logistice management application',
-      github: "github-link",
-      url: "app-url",
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
       tech: [
         {name: "Next.js"},
         {name: "Chakara-ui"},
@@ -40,8 +40,8 @@ const packages = {
       previewImg: "Preview Image",
       name: 'OptimusPro',
       des: 'A Learning platform for forex and cryptocurrency traders.',
-      github: "github-link",
-      url: "app-url",
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
       tech: [
         {name: "Next.js"},
         {name: "TailwindCss"},
@@ -54,8 +54,8 @@ const packages = {
       previewImg: "Preview Image",
       name: 'Evolt',
       des: 'A voting management system to help organizers create and manage perticipant and voters on their event.',
-      github: "github-link",
-      url: "app-url",
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
       tech: [
         {name: "Next.js"},
         {name: "Typescript"},
@@ -68,34 +68,69 @@ const packages = {
   sideProjects: [
     {
       id: 1,
+      logo: "logo",
+      previewImg: "Preview Image",
       name: 'E-commerce boilerplate',
-      description: 'For Small teams or office',
+      des: 'For Small teams or office',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
     },
     {
       id: 2,
+      logo: "logo",
+      previewImg: "Preview Image",
       name: 'React Authentication boilerplate',
-      description: 'For Small teams or office',
+      des: 'For Small teams or office',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
     },
     {
       id: 3,
+      logo: "logo",
+      previewImg: "Preview Image",
       name: 'DJ event App',
-      description: 'For Small teams or office',
-    },
-    {
-      id: 4,
-      name: 'Evolt',
-      description: 'Voting management application',
+      des: 'For Small teams or office',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
     },
     {
       id: 5,
+      logo: "logo",
+      previewImg: "Preview Image",
       name: 'CryptoMeta',
-      description: 'Cryptocurrency application',
-    },
-    {
-      id: 6,
-      name: 'CryptoMeta',
-      description: 'Cryptocurrency application',
-    },
+      des: 'Cryptocurrency application',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
+      
+    }
   ]
 };
 
@@ -134,7 +169,7 @@ const Projects = () => {
         <button 
         className={state.active === 'sideProjects' ? 'active' : ''} 
         type="button" 
-        aria-label="SideProjects"
+        aria-label="sideProjects"
         onClick={() => handlePricingPlan('sideProjects')}
         >Pet Projects</button>
       </ToggleButtons>
@@ -161,6 +196,9 @@ const Projects = () => {
            </div>
           </div>
         ))}
+      </div>
+      <div className="viewLink">
+        <Link href="/projects"><a>See more</a></Link>
       </div>
     </ProjectSection>
   )
@@ -231,13 +269,28 @@ const ProjectSection = styled.section`
     }
 
     .protitle {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin: 0;
     }
     .logo {
       font-size: 1rem;
-      margin-right: 2rem;
+      margin-right: 1rem;
       font-weight: 900;
+    }
+  }
+
+  .viewLink {
+    margin: 3rem auto 0rem;
+    text-align: center;
+    a {
+      color: #333;
+      padding: 10px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      &:hover {
+        background: #dfdfdf;
+
+      }
     }
   }
 
@@ -245,6 +298,7 @@ const ProjectSection = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    margin-bottom: 2rem;
   }
 
   @media(max-width: 768px) {
@@ -322,11 +376,13 @@ const ToggleButtons = styled.div`
     font-weight: 600;
     color: #777777;
     border-radius: 4px;
+    animation: ${fadeIn} .4s ease-in;
     text-transform: capitalize;
     transition: all 0.6s,
   }
   .active {
     background: #fff;
+    animation: ${fadeIn2} .4s ease-in;
     color: #333;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.2);
   }

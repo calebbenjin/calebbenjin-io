@@ -32,30 +32,36 @@ const techStackData = [
     icon: <SiRedux />,
   },
   {
-    id: 4,
+    id: 5,
     name: 'TypeScript',
     icon: <SiTypescript />,
   },
   {
-    id: 5,
+    id: 56,
+    name: 'Svelte.js',
+    icon: <SiTypescript />,
+  },
+  {
+    id: 6,
     name: 'Serverless',
     icon: <SiServerless />,
   },
   {
-    id: 6,
+    id: 7,
     name: 'Storybook',
     icon: <SiStorybook />,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Tailwindcss',
     icon: <SiTailwindcss />,
   },
   {
-    id: 8,
+    id: 9,
     name: 'SASS',
     icon: <SiSass />,
   },
+  
 ]
 
 const TechStack = () => {

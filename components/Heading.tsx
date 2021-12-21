@@ -15,7 +15,7 @@ const Header = styled.h2`
   font-weight: 900;
   font-size: 40px;
   color: #000;
-  line-height: 0;
+  margin-bottom: 2rem;
 
   @media(max-width: 768px) {
     font-size: 30px;
