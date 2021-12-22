@@ -3,11 +3,8 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { BsMoonStars } from 'react-icons/bs'
 
-type NavProps = {
-  name: string,
-}
 
-const Navbar = (props: NavProps) => {
+const Navbar = () => {
   const [mobileToggle, setMobileToggle] = useState(false)
 
   const handleMobileToggle = () => {
@@ -26,10 +23,10 @@ const Navbar = (props: NavProps) => {
           <Link href="/">
             <a className="navLink">Home</a>
           </Link>
-          <Link href="/">
+          <Link href="/projects">
             <a className="navLink">Projects</a>
           </Link>
-          <Link href="/">
+          <Link href="/blog">
             <a className="navLink">Blog</a>
           </Link>
           <Link href="/">
@@ -46,10 +43,10 @@ const Navbar = (props: NavProps) => {
         <Link href="/">
           <a className="navLink">Home</a>
         </Link>
-        <Link href="/">
+        <Link href="/projects">
           <a className="navLink">Projects</a>
         </Link>
-        <Link href="/">
+        <Link href="/blog">
           <a className="navLink">Blog</a>
         </Link>
         <Link href="/">

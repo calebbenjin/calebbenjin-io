@@ -39,6 +39,7 @@ const HeroContainer = styled.div`
 
     .title {
       font-weight: 700;
+      margin-top: 20px;
 
       span {
         font-weight: 400;

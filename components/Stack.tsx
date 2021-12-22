@@ -8,6 +8,7 @@ import {
   SiTailwindcss,
   SiSass,
   SiServerless,
+  SiSvelte
 } from 'react-icons/si'
 
 const techStackData = [
@@ -39,7 +40,7 @@ const techStackData = [
   {
     id: 56,
     name: 'Svelte.js',
-    icon: <SiTypescript />,
+    icon: <SiSvelte />,
   },
   {
     id: 6,
@@ -97,6 +98,12 @@ const StackSection = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.4s ease;
+    &:hover {
+      color: #fff;
+      background: #333;
+      cursor: pointer
+    }
 
     span { 
       margin-right: 5px;

@@ -1,33 +1,6 @@
-import type { NextPage } from 'next'
-import Hero from '../components/Hero'
-import Navbar from '../components/Navbar'
-import Stack from '../components/Stack'
-import Footer from '../components/Footer'
-import ProjectList from '../components/ProjectList'
-import BlogList from '../components/BlogList'
-import Layout from '../components/Layout'
+import Layout from "../../components/Layout"
+import ProjectList from "../../components/ProjectList"
 
-
-const blogs = [
-  {
-    id: 2,
-    title: "Everything I Know About Style Guides, Design Systems, and Component Libraries",
-    slug: "Everything I Know About Style Guides, Design Systems, and Component Libraries",
-    date: "12/01/2022"
-  },
-  {
-    id: 3,
-    title: "How to handle JWT & Http-Only Cookies Authentication with Next.js",
-    slug: "How to handle JWT & Http-Only Cookies Authentication with Next.js",
-    date: "12/01/2022"
-  },
-  {
-    id: 4,
-    title: "Past, Present, and Future of React State Management",
-    slug: "Past, Present, and Future of React State Management",
-    date: "12/01/2022"
-  }
-]
 
 const packages = {
   projects: [
@@ -167,15 +140,12 @@ const packages = {
   ]
 };
 
-const Home: NextPage = () => {
+const BlogPage = () => {
   return (
     <Layout>
-      <Hero />
-      <Stack />
-      <ProjectList data={packages} showMore />
-      <BlogList title="Featured Posts" data={blogs} showMore />
+      <ProjectList data={packages} />
     </Layout>
   )
 }
 
-export default Home
+export default BlogPage
