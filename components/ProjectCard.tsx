@@ -23,7 +23,7 @@ const Projects = ({project}:any) => {
           </div>
         </header>
         <p className="des" >{project.des}</p>
-          <div className="lang">{project.tech.map((item, i) => (
+          <div className="lang">{project.tech.map(({item, i}:any) => (
             <small key={i}>{item.name}</small>
           ))}</div>
         
