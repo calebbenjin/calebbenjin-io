@@ -5,7 +5,6 @@ import Footer from '../components/Footer'
 const Layout: NextPage = ({children}) => {
   return (
     <main className="container">
-      <Navbar/>
         {children}
       <Footer />
     </main>

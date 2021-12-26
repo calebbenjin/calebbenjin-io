@@ -48,14 +48,14 @@ const Section = styled.section`
       margin: 3rem auto 0rem;
       text-align: center;
       a {
-        color: #5f5f5f;
+        color: ${({ theme }) => theme.text};
         font-weight: 500;
         padding: 10px;
         border-radius: 4px;
         transition: all 0.3s ease;
         &:hover {
-          background: #dfdfdf;
-
+          background: ${({ theme }) => theme.body};
+          box-shadow: 1px -1px 14px rgba(0,0,0,0.2);
         }
       }
     }

@@ -32,8 +32,10 @@ const BlogSection = ({post}:any) => {
       <Link href={`/blog/${post.slug}`}>
         <a>
           <div key={post.id} className="card">
-            <h3>{post.title}</h3>
-            <small><FaCalendarAlt /> {post.date}</small>
+            <div className="body">
+              <h3>{post.title}</h3>
+              <small><FaCalendarAlt /> {post.date}</small>
+            </div>
           </div>
         </a>
       </Link>
@@ -44,33 +46,44 @@ const BlogSection = ({post}:any) => {
 
 const Section = styled.section`
   .card {
-    background: #fff;
-    position: relative;
-    padding: 10px 20px;
+    width: 100%;
     height: 100%;
-    border-radius: 10px;
-    border: solid 4px #dbdbdb;
+    background: linear-gradient(to right, #e68e01, #09a0e6, #0777a3f2);
+    padding: 4px;
+    border-radius: 4px;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
     transform: scale(1); 
     &:hover {
-      border-color: #068dc2;
       transform: scale(1.1);
-      color: #000;
+      color: #e68e01;
       cursor: pointer;
+
+      small {
+        color: ${({ theme }) => theme.text};
+      }
     }
 
-    small {
-      position: absolute;
-      bottom: 1rem;
-    }
+    .body {
+      background: ${({ theme }) => theme.body};
+      border-radius: 4px;
+      padding: 2rem; 
+      height: 100%;
+      position: relative;
 
-    h3 {
-      font-weight: 500;
-      margin-bottom: 5rem;
-      line-height: 28px;
-      font-size: 18px;
-      color: #11111;
+      small {
+        position: absolute;
+        bottom: 1rem;
+      }
+
+      h3 {
+        font-weight: 500;
+        margin-bottom: 5rem;
+        margin-top: 0;
+        line-height: 28px;
+        font-size: 18px;
+        color: #11111;
+      }
     }
   }
 `;

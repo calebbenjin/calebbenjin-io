@@ -75,6 +75,43 @@ const packages = {
         {name: "TailwindCss"},
         {name: "Node.js"},
       ]
+    }
+    
+  ],
+  sideProjects: [
+    {
+      id: 1,
+      logo: "logo",
+      previewImg: "Preview Image",
+      name: 'E-commerce boilerplate',
+      slug: 'E-commerce boilerplate',
+      des: 'Kickstart your app with less stress, from Authentication, Payment, Checkout, Filter item with color, price all done out of the box.',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
+    },
+    {
+      id: 2,
+      logo: "logo",
+      previewImg: "Preview Image",
+      name: 'EasyStore',
+      slug: 'EasyStore',
+      des: 'EasyStore help you create and own an online shop with less stress and is free',
+      github: "https://github.com/calebbenjin",
+      url: "https://calebbenjin.vercel.app",
+      tech: [
+        {name: "Next.js"},
+        {name: "Typescript"},
+        {name: "Redux"},
+        {name: "Prisma"},
+        {name: "Styled-component"},
+      ]
     },
     {
       id: 4,
@@ -93,77 +130,6 @@ const packages = {
         {name: "Styled-component"},
       ]
     },
-  ],
-  sideProjects: [
-    {
-      id: 1,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'E-commerce boilerplate',
-      slug: 'E-commerce boilerplate',
-      des: 'For Small teams or office',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
-    {
-      id: 2,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'React Authentication boilerplate',
-      slug: 'React Authentication boilerplate',
-      des: 'For Small teams or office',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
-    {
-      id: 3,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'DJ event App',
-      slug: 'DJ event App',
-      des: 'For Small teams or office',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
-    {
-      id: 5,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'CryptoMeta',
-      slug: 'CryptoMeta',
-      des: 'Cryptocurrency application',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-      
-    }
   ]
 };
 

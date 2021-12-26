@@ -88,9 +88,11 @@ const StackSection = styled.section`
   }
 
   .card {
-    background: #fff;
+    /* background: #fff; */
     padding: 10px;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
+
+    border: solid 1px #fff;
     margin-right: 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;

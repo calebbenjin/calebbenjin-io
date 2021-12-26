@@ -1,13 +1,9 @@
-import { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import Heading from './Heading';
 import Link from 'next/link'
 import { FaRegEye, FaGithub } from 'react-icons/fa'
 
 
 const Projects = ({project}:any) => {
-
-  console.log(project)
 
   return (
     <Card key={project.id}>
@@ -23,8 +19,8 @@ const Projects = ({project}:any) => {
           </div>
         </header>
         <p className="des" >{project.des}</p>
-          <div className="lang">{project.tech.map(({item, i}:any) => (
-            <small key={i}>{item.name}</small>
+          <div className="lang">{project.tech.map((item:any, i:any) => (
+            <small key={i}>{item?.name}</small>
           ))}</div>
         
       </div>
@@ -33,14 +29,16 @@ const Projects = ({project}:any) => {
 }
 
 const Card = styled.section`
-    /* border: solid 1px #acacac; */
+    border: solid 1px ${({ theme }) => theme.text};
     border-radius: 10px;
     padding: 20px;
-    background: #fff;
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
     display: flex;
     align-items: center;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
-    /* line-height: 1; */
+    line-height: 24px;
+    cursor: pointer;
 
     .header {
       display: flex;
@@ -58,7 +56,6 @@ const Card = styled.section`
         margin-left: 1rem;
         font-size: 1rem;
         transition: all 0.3s ease;
-        color: #5d5c5c;
         &:hover {
           color: #333;
         }
@@ -72,24 +69,25 @@ const Card = styled.section`
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      color: #626262;
 
       small {
         margin: 0.5rem 0.5rem 0 0;
-        background: #f1f1f1;
-        padding: 5px 8px;
+        padding: 1px 8px;
         border-radius: 4px;
         transition: all 0.3s ease-in;
+        color: ${( {theme} ) => theme.text};
+        border: solid 1px #f1f1f1;
         &:hover {
-          background: #333;
-          color: #fff;
-          cursor: pointer
+          box-shadow: 1px -1px 10px rgba(0,0,0,0.1);
+          cursor: pointer;
+          border: solid 1px ${({ theme }) => theme.text};
         }
       }
     }
 
     .des {
       font-size: 0.9rem;
+      color: ${({ theme }) => theme.text};
     }
 
     .protitle {

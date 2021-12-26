@@ -44,7 +44,7 @@ const Projects = ({data, showMore}:any) => {
         type="button" 
         aria-label="sideProjects"
         onClick={() => handlePricingPlan('sideProjects')}
-        >Pet Projects</button>
+        >Side Projects</button>
       </ToggleButtons>
       
       <div className="cardWrapper">
@@ -66,14 +66,15 @@ const ProjectSection = styled.section`
     margin: 3rem auto 0rem;
     text-align: center;
     a {
-      color: #5f5f5f;
+      color: ${({ theme }) => theme.text};
       font-weight: 500;
       padding: 10px;
       border-radius: 4px;
       transition: all 0.3s ease;
       &:hover {
-        background: #dfdfdf;
-
+        background: ${({ theme }) => theme.body};
+        color: ${({ theme }) => theme.text};
+        box-shadow: 1px -1px 14px rgba(0,0,0,0.3);
       }
     }
   }
@@ -115,22 +116,22 @@ const fadeIn2 = keyframes`
 `;
 
 const ToggleButtons = styled.div`
-  background: #eeeeee;
+  background: ${({ theme }) => theme.body};
+  box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
   width: 40%;
-  margin: 4rem auto;
-  /* padding: 10px; */
+  margin: 2rem 0;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
   button {
     background: transparent;
-    padding: 15px 30px;
+    padding: 8px 30px;
     white-space: nowrap;
     border: none;
     width: 100%;
     margin: 10px;
     font-weight: 600;
-    color: #777777;
+    color: ${({ theme }) => theme.text};
     border-radius: 4px;
     animation: ${fadeIn} .4s ease-in;
     text-transform: capitalize;
