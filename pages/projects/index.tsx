@@ -1,13 +1,5 @@
-import type { NextPage } from 'next'
-import fs from "fs"
-import path from "path"
-import matter from 'gray-matter'
-import Hero from '../components/Hero'
-import Stack from '../components/Stack'
-import ProjectList from '../components/ProjectList'
-import BlogList from '../components/BlogList'
-import Layout from '../components/Layout'
-import { sortByDate } from '../lib'
+import Layout from "../../components/Layout"
+import ProjectList from "../../components/ProjectList"
 
 
 const packages = {
@@ -114,38 +106,12 @@ const packages = {
   ]
 };
 
-const Home: NextPage = ({posts}:any) => {
+const BlogPage = () => {
   return (
     <Layout>
-      <Hero />
-      <Stack />
-      <ProjectList data={packages} showMore />
-      <BlogList title="Featured Posts" data={posts} showMore />
+      <ProjectList data={packages} />
     </Layout>
   )
 }
 
-export async function getStaticProps() {
-  const files = fs.readdirSync(path.join('data/blog'))
-
-  const posts = files.map(filename => {
-    const slug = filename.replace('.md', '')
-
-    const markdownWithMeta = fs.readFileSync(path.join('data/blog', filename), 'utf-8')
-
-    const {data:frontmatter} = matter(markdownWithMeta)
-
-    return {
-      slug,
-      frontmatter
-    }
-  })
-
-  return {
-    props: {
-      posts: posts.sort(sortByDate).slice(0, 3)
-    }
-  }
-}
-
-export default Home
+export default BlogPage

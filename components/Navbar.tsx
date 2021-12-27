@@ -3,11 +3,8 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { BsMoonStars } from 'react-icons/bs'
 
-type NavProps = {
-  name: string,
-}
 
-const Navbar = (props: NavProps) => {
+const Navbar = ({toggleTheme}:any) => {
   const [mobileToggle, setMobileToggle] = useState(false)
 
   const handleMobileToggle = () => {
@@ -17,59 +14,67 @@ const Navbar = (props: NavProps) => {
 
   return (
     <NavBar>
-      <div className="mobileToggle" onClick={handleMobileToggle}>
-        <div className="link"></div>
-        <div className="link"></div>
-        <div className="link"></div>
-      </div>
-      <div className={`${mobileToggle ? "showMobileNav" : "mobileNav"}`}>
+      <div className="container">
+        <div className="mobileToggle" onClick={handleMobileToggle}>
+          <div className="link"></div>
+          <div className="link"></div>
+          <div className="link"></div>
+        </div>
+        <div className={`${mobileToggle ? "showMobileNav" : "mobileNav"}`}>
+            <Link href="/">
+              <a className="navLink">Home</a>
+            </Link>
+            <Link href="/projects">
+              <a className="navLink">Projects</a>
+            </Link>
+            <Link href="/blog">
+              <a className="navLink">Blog</a>
+            </Link>
+            <Link href="/snippets">
+              <a className="navLink">Code Snippets</a>
+            </Link>
+        </div>
+        <Link href="/">
+          <a className="MobileLogo">Caleb<span>benjin.</span></a>
+        </Link>
+        <div className="navContainer">
+          <Link href="/">
+            <a className="navLogo">Caleb<span>benjin.</span></a>
+          </Link>
           <Link href="/">
             <a className="navLink">Home</a>
           </Link>
-          <Link href="/">
+          <Link href="/projects">
             <a className="navLink">Projects</a>
           </Link>
-          <Link href="/">
+          <Link href="/blog">
             <a className="navLink">Blog</a>
           </Link>
-          <Link href="/">
-            <a className="navLink">Snippets</a>
+          <Link href="/snippets">
+            <a className="navLink">Code Snippets</a>
           </Link>
-      </div>
-      <Link href="/">
-        <a className="MobileLogo">Caleb<span>benjin.</span></a>
-      </Link>
-      <div className="navContainer">
-        <Link href="/">
-          <a className="navLogo">Caleb<span>benjin.</span></a>
-        </Link>
-        <Link href="/">
-          <a className="navLink">Home</a>
-        </Link>
-        <Link href="/">
-          <a className="navLink">Projects</a>
-        </Link>
-        <Link href="/">
-          <a className="navLink">Blog</a>
-        </Link>
-        <Link href="/">
-          <a className="navLink">Snippets</a>
-        </Link>
-      </div>
-      <div className="darkMoodIcon">
-        <BsMoonStars />
+        </div>
+        <div className="darkMoodIcon" onClick={toggleTheme}>
+          <BsMoonStars />
+        </div>
       </div>
     </NavBar>
   )
 }
 
 const NavBar: any = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
-  position: relative;
-  z-index: 1;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(10px);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+
 
   .MobileLogo {
     display: none;
@@ -84,7 +89,7 @@ const NavBar: any = styled.nav`
   }
 
   .navContainer {
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -92,11 +97,11 @@ const NavBar: any = styled.nav`
     .navLink {
       text-transform: capitalize;
       transition: all 0.3s ease-in;
-      padding: 3px 10px;
+      padding: 5px 10px;
       border-radius: 4px;
       &:hover {
-        background: #333;
-        color: #eee;
+        background: #f1f1f1;
+        color: ${({ theme }) => theme.text};
       }
     }
 
@@ -110,7 +115,7 @@ const NavBar: any = styled.nav`
   }
 
   .darkMoodIcon {
-    background: #eee;
+    background: ${({ theme }) => theme.body};
     width: 35px;
     height: 35px;
     display: flex;
@@ -120,8 +125,11 @@ const NavBar: any = styled.nav`
     font-size: 1.2rem;
     transition: all 0.3s ease-in;
     &:hover {
-      background: #333;
-      color: #eee;
+      background: ${({ theme }) => theme.body};
+      color: ${({ theme }) => theme.text};
+    }
+    &::focus {
+      box-shadow: 1px -1px 14px rgba(0,0,0,0.3);
     }
   }
 
@@ -136,7 +144,7 @@ const NavBar: any = styled.nav`
     .link {
       width: 25px;
       height: 2.5px;
-      background: #333;
+      background: ${({ theme }) => theme.text};
       margin-bottom: 4px;
     }
   }

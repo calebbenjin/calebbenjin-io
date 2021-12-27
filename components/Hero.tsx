@@ -29,16 +29,23 @@ const HeroContainer = styled.div`
 
   .contentBox {
     width: 65%;
+    color: ${({ theme }) => theme.text};
 
     .name {
       font-weight: 900;
       font-size: 48px;
-      color: #000;
-      line-height: 0;
+      color: ${({ theme }) => theme.text};
+      line-height: 24px;
+    }
+
+    .intro {
+      color: ${({ theme }) => theme.text};
+      line-height: 24px
     }
 
     .title {
       font-weight: 700;
+      margin-top: 2rem;
 
       span {
         font-weight: 400;
@@ -66,8 +73,7 @@ const HeroContainer = styled.div`
       .name {
         font-weight: 900;
         font-size: 30px;
-        color: #000;
-        line-height: 0;
+        color: ${({ theme }) => theme.text};
       }
     }
 

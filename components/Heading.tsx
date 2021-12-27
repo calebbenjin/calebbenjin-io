@@ -14,11 +14,13 @@ const Heading = (props: headingProp) => {
 const Header = styled.h2`
   font-weight: 900;
   font-size: 40px;
-  color: #000;
-  margin-bottom: 2rem;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 4rem;
+  line-height: 1;
 
   @media(max-width: 768px) {
     font-size: 30px;
+    line-height: 1.2;
   }
 `
 
