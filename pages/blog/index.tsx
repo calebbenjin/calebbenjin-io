@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 const BlogPage = ({posts}:any) => {
   return (
-    <Layout title="Blog - Caleb Benjamin">
+    <Layout>
       <Section>
       <Heading>Blog</Heading>
       {/* <p>I've been writing online since 2020, mostly about web development and tech careers. In total, I've written 70 articles on my blog. Use the search below to filter by title.</p> */}
