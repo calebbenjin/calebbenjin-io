@@ -9,7 +9,7 @@ import Layout from "../../components/Layout"
 const SinglePostPage = ({frontmatter:{author_image, author, cover_image, title, date, excerpt}, content, slug}) => {
 
   return (
-    <Layout title={slug}>
+    <Layout>
       <Heading>{title}</Heading>
       <Container>
         <div className="author">

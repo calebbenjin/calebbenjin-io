@@ -108,7 +108,7 @@ const packages = {
 
 const BlogPage = () => {
   return (
-    <Layout title="Projects - Caleb Benjamin">
+    <Layout>
       <ProjectList data={packages} />
     </Layout>
   )
