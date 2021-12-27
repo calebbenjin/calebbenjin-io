@@ -26,9 +26,11 @@ p {
   color: #444444;
 }
 
-@media(max-width: 768px) {
+
+
+@media(max-width: 800px) {
   .container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
   }
 }

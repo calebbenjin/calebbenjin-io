@@ -33,8 +33,9 @@ const BlogSection = ({post}:any) => {
         <a>
           <div key={post.id} className="card">
             <div className="body">
-              <h3>{post.title}</h3>
-              <small><FaCalendarAlt /> {post.date}</small>
+              <h3>{post.frontmatter.title}</h3>
+              <p>{post.frontmatter.excerpt}</p>
+              <small><FaCalendarAlt /> {post.frontmatter.date}</small>
             </div>
           </div>
         </a>
@@ -67,7 +68,7 @@ const Section = styled.section`
     .body {
       background: ${({ theme }) => theme.body};
       border-radius: 4px;
-      padding: 2rem; 
+      padding: 1.5rem; 
       height: 100%;
       position: relative;
 
@@ -78,11 +79,17 @@ const Section = styled.section`
 
       h3 {
         font-weight: 500;
-        margin-bottom: 5rem;
-        margin-top: 0;
+        margin: 0;
         line-height: 28px;
-        font-size: 18px;
+        font-size: 20px;
         color: #11111;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        font-size: 0.8rem;
+        line-height: 20px;
+        color: ${({ theme }) => theme.text};
       }
     }
   }

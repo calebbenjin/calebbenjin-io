@@ -23,3 +23,5 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 24px
   }
 `
+
+

@@ -9,6 +9,8 @@ const BlogSection = ({title, showMore, data}:any) => {
     <Section>
       <Heading>{title}</Heading>
 
+      
+
       <div className="gridContainer">
         {data.map((post:any) => (
           <BlogCard key={post.id} post={post} />
@@ -23,8 +25,7 @@ const BlogSection = ({title, showMore, data}:any) => {
 
 
 const Section = styled.section`
-  margin-bottom: 5rem;
-
+  margin: 5rem 0;
 
   .gridContainer {
     display: grid;

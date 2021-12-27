@@ -1,33 +1,14 @@
 import type { NextPage } from 'next'
+import fs from "fs"
+import path from "path"
+import matter from 'gray-matter'
 import Hero from '../components/Hero'
-import Navbar from '../components/Navbar'
 import Stack from '../components/Stack'
-import Footer from '../components/Footer'
 import ProjectList from '../components/ProjectList'
 import BlogList from '../components/BlogList'
 import Layout from '../components/Layout'
+import { sortByDate } from '../lib'
 
-
-const blogs = [
-  {
-    id: 2,
-    title: "Everything I Know About Style Guides, Design Systems, and Component Libraries",
-    slug: "Everything I Know About Style Guides, Design Systems, and Component Libraries",
-    date: "12/01/2022"
-  },
-  {
-    id: 3,
-    title: "How to handle JWT & Http-Only Cookies Authentication with Next.js",
-    slug: "How to handle JWT & Http-Only Cookies Authentication with Next.js",
-    date: "12/01/2022"
-  },
-  {
-    id: 4,
-    title: "Past, Present, and Future of React State Management",
-    slug: "Past, Present, and Future of React State Management",
-    date: "12/01/2022"
-  }
-]
 
 const packages = {
   projects: [
@@ -133,15 +114,38 @@ const packages = {
   ]
 };
 
-const Home: NextPage = () => {
+const Home: NextPage = ({posts}:any) => {
   return (
     <Layout>
       <Hero />
       <Stack />
       <ProjectList data={packages} showMore />
-      <BlogList title="Featured Posts" data={blogs} showMore />
+      <BlogList title="Featured Posts" data={posts} showMore />
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join('data/blog'))
+
+  const posts = files.map(filename => {
+    const slug = filename.replace('.md', '')
+
+    const markdownWithMeta = fs.readFileSync(path.join('data/blog', filename), 'utf-8')
+
+    const {data:frontmatter} = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
+  return {
+    props: {
+      posts: posts.sort(sortByDate).slice(0, 3)
+    }
+  }
 }
 
 export default Home

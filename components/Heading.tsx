@@ -15,10 +15,12 @@ const Header = styled.h2`
   font-weight: 900;
   font-size: 40px;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  line-height: 1;
 
   @media(max-width: 768px) {
     font-size: 30px;
+    line-height: 1.2;
   }
 `
 

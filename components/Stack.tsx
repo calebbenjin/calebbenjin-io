@@ -89,7 +89,7 @@ const StackSection = styled.section`
 
   .card {
     /* background: #fff; */
-    padding: 10px;
+    padding: 5px;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
 
     border: solid 1px #fff;

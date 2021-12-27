@@ -89,7 +89,7 @@ const NavBar: any = styled.nav`
   }
 
   .navContainer {
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;

@@ -118,7 +118,7 @@ const fadeIn2 = keyframes`
 const ToggleButtons = styled.div`
   background: ${({ theme }) => theme.body};
   box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
-  width: 40%;
+  width: 50%;
   margin: 2rem 0;
   border-radius: 4px;
   display: flex;
