@@ -8,8 +8,9 @@ const Hero = () => {
       <HeroContainer>
         <div className="contentBox">
           <h1 className="name">Caleb Benjamin</h1>
-          <h4 className="title"><span>Frontend/UX Engineer at</span> Bojale-Labs</h4>
-          <p className="intro">I have a robust problem-solving skill, and a proven experience in creating thoughtful digital products that lie at the interaction of beauty, that are  functional, maintainable, and has scalable context. I also help developers build a faster web app. I love Teaching and Writing about web development, serverless, React, and Next.js.</p>
+          <h4 className="title"><span>Frontend Software Engineer at</span> Bojale-Labs</h4>
+          <p className="intro">Am an enthusiastic and resourceful engineer who is passionate about building great products.  I love being part of a team, whilst enjoying the autonomous nature of working remotely. I have 4+ years of experience with component-based architecture using libraries such as JavaScript, TypeScript, ReactJs, NextJs, Webpack, Styled Components, Rollup, SvelteJs, Redux, Git, OAuth, SASS</p>
+          {/* <p className="intro">I have a robust problem-solving skill, and a proven experience in creating thoughtful digital products that lie at the interaction of beauty, that are  functional, maintainable, and has scalable context. I also help developers build a faster web app. I love Teaching and Writing about web development, serverless, React, and Next.js.</p> */}
         </div>
         <div className="ImageBox">
           <Image src={profileImage} alt="ProfileImage" width="150" height="150" placeholder="blur" />

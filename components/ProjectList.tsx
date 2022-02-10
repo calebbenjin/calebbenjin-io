@@ -14,25 +14,25 @@ const Projects = ({data, showMore}:any) => {
     projectsPlan: projects,
   })
 
-  const handlePricingPlan = (project: any) => {
-    if(project === 'sideProjects') {
-      setState({
-        active: 'sideProjects',
-        projectsPlan: sideProjects
-      })
-    } else {
-      setState({
-        active: 'projects',
-        projectsPlan: projects
-      })
-    }
-  }
+  // const handlePricingPlan = (project: any) => {
+  //   if(project === 'sideProjects') {
+  //     setState({
+  //       active: 'sideProjects',
+  //       projectsPlan: sideProjects
+  //     })
+  //   } else {
+  //     setState({
+  //       active: 'projects',
+  //       projectsPlan: projects
+  //     })
+  //   }
+  // }
 
 
   return (
     <ProjectSection>
       <Heading>Projects</Heading>
-      <ToggleButtons>
+      {/* <ToggleButtons>
         <button 
         className={state.active === 'projects' ? 'active' : ''} 
         type="button" 
@@ -45,7 +45,7 @@ const Projects = ({data, showMore}:any) => {
         aria-label="sideProjects"
         onClick={() => handlePricingPlan('sideProjects')}
         >Side Projects</button>
-      </ToggleButtons>
+      </ToggleButtons> */}
       
       <div className="cardWrapper">
         {state.projectsPlan.map((project:any) => (

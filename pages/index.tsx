@@ -8,19 +8,22 @@ import ProjectList from '../components/ProjectList'
 import BlogList from '../components/BlogList'
 import Layout from '../components/Layout'
 import { sortByDate } from '../lib'
+import svelteLogo from '../public/svelte.png'
+import krakenLogo from '../public/kraken.png'
+import RicnosLogo from '../public/logo.svg'
 
 
 const packages = {
   projects: [
     {
       id: 1,
-      logo: "logo",
+      logo: RicnosLogo,
       previewImg: "Preview Image",
       name: 'Ricnos Logistic',
       slug: 'Ricnos Logistic',
       des: 'A logistice management application logistice management application',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
+      github: "https://github.com/calebbenjin/ricnos-user-one",
+      url: "https://ricnosapp.vercel.app/",
       tech: [
         {name: "Next.js"},
         {name: "Chakara-ui"},
@@ -29,88 +32,32 @@ const packages = {
     },
     {
       id: 2,
-      logo: "logo",
+      logo: svelteLogo,
       previewImg: "Preview Image",
-      name: 'Svelteui',
-      slug: 'Svelteui',
-      des: 'A logistice management application logistice management application',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
+      name: 'Headless-Svelte-ui',
+      slug: 'Headless-Svelte-ui',
+      des: 'A group of resusable headless components that makes it easy building Svelte Apps, with over 90% of styles props.',
+      github: "https://github.com/Bojale-Labs/svelte-component-library",
+      url: "https://www.npmjs.com/package/@bojalelabs/headless-svelte-ui",
       tech: [
-        {name: "Next.js"},
-        {name: "Chakara-ui"},
-        {name: "Redux"},
+        {name: "Sveltejs"},
       ]
     },
     {
       id: 3,
-      logo: "logo",
+      logo: krakenLogo,
       previewImg: "Preview Image",
-      name: 'OptimusPro',
-      slug: 'OptimusPro',
-      des: 'A Learning platform for forex and cryptocurrency traders.',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
+      name: 'Krakenedu',
+      slug: 'Krakenedu',
+      des: 'An that assess developer skill level, expose them to the right courses and jobs, make employers notice and attract relevant opportunities',
+      github: "https://github.com/Bojale-Labs/KrakenEdu-Frontend",
+      url: "https://krakenedu.com/",
       tech: [
-        {name: "Next.js"},
-        {name: "TailwindCss"},
-        {name: "Node.js"},
+        {name: "ReactJs"},
+        {name: "Sass"},
       ]
     }
     
-  ],
-  sideProjects: [
-    {
-      id: 1,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'E-commerce boilerplate',
-      slug: 'E-commerce boilerplate',
-      des: 'Kickstart your app with less stress, from Authentication, Payment, Checkout, Filter item with color, price all done out of the box.',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
-    {
-      id: 2,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'EasyStore',
-      slug: 'EasyStore',
-      des: 'EasyStore help you create and own an online shop with less stress and is free',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
-    {
-      id: 4,
-      logo: "logo",
-      previewImg: "Preview Image",
-      name: 'Evolt',
-      slug: 'Evolt',
-      des: 'A voting management system to help organizers create and manage perticipant and voters on their event.',
-      github: "https://github.com/calebbenjin",
-      url: "https://calebbenjin.vercel.app",
-      tech: [
-        {name: "Next.js"},
-        {name: "Typescript"},
-        {name: "Redux"},
-        {name: "Prisma"},
-        {name: "Styled-component"},
-      ]
-    },
   ]
 };
 

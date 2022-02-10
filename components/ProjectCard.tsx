@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import Link from 'next/link'
 import { FaRegEye, FaGithub } from 'react-icons/fa'
+import Image from 'next/image'
 
 
 const Projects = ({project}:any) => {
@@ -10,11 +11,11 @@ const Projects = ({project}:any) => {
       <div>
         <header className="header">
           <div className="headFlex">
-            <h3 className="logo">{project.logo}</h3>
+            <Image src={project.logo} alt="project-image" width="30" height="30" />
             <h3 className="protitle">{project.name}</h3>
           </div>
           <div className="link">
-            <Link href={`/projects/${project.slug}`}><a title="View Website"><FaRegEye /></a></Link>
+            <Link href={project.url}><a title="View Website" target="_blank"><FaRegEye /></a></Link>
             <Link href={project.github}><a target="_blank" title="View Source code"><FaGithub /></a></Link>
           </div>
         </header>
@@ -93,6 +94,7 @@ const Card = styled.section`
     .protitle {
       font-size: 1rem;
       margin: 0;
+      margin-left: 1rem;
     }
     .logo {
       font-size: 1rem;
