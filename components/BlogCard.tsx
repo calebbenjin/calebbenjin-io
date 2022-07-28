@@ -32,7 +32,7 @@ const BlogSection = ({post}:any) => {
       <Link href={`/blog/${post.slug}`}>
         <a>
           <div key={post.id} className="card">
-            <div className="body">
+            <div className="card-body">
               <h3>{post.frontmatter.title}</h3>
               <p>{post.frontmatter.excerpt}</p>
               <small><FaCalendarAlt /> {post.frontmatter.date}</small>
@@ -49,7 +49,7 @@ const Section = styled.section`
   .card {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #e68e01, #09a0e6, #0777a3f2);
+    background: linear-gradient(to right, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brand});
     padding: 4px;
     border-radius: 4px;
     box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
@@ -65,8 +65,8 @@ const Section = styled.section`
       }
     }
 
-    .body {
-      background: ${({ theme }) => theme.body};
+    .card-body {
+      background: ${({ theme }) => theme.white};
       border-radius: 4px;
       padding: 1.5rem; 
       height: 100%;
@@ -82,7 +82,7 @@ const Section = styled.section`
         margin: 0;
         line-height: 28px;
         font-size: 20px;
-        color: #11111;
+        color: ${({ theme }) => theme.text};
       }
 
       p {

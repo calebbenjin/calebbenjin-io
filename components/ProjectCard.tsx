@@ -1,153 +1,170 @@
 import styled, { keyframes } from 'styled-components'
 import Link from 'next/link'
 import { FaRegEye, FaGithub } from 'react-icons/fa'
+import Image from 'next/image'
+import project1Image from '../public/project1.png'
 
 
 const Projects = ({project}:any) => {
 
   return (
     <Card key={project.id}>
-      <div>
-        <header className="header">
-          <div className="headFlex">
-            <h3 className="logo">{project.logo}</h3>
-            <h3 className="protitle">{project.name}</h3>
+      <Content>
+        <h1>{project.name}</h1>
+        <p>{project.des}</p>
+        <ul>
+          {project.task.map((task: any) => (
+            <li key={task.id}>{task.title}</li>
+          ))}
+        </ul>
+        <div className="tech">
+          {project.tech.map((tech: any) => (
+            <span key={tech.id} className="tech">{tech.name}</span>
+          ))}
+        </div>
+      </Content>
+
+      <ImageBox>
+        <Image src={project.image} alt="project-image" layout='responsive' />
+        <div className="overlay-container overlay">
+          <div className="box">
+            <button className="web-btn btn">
+              <Link href={project.url}><a target="_blank">Visit website</a></Link>
+            </button>
+            <button className="case-btn btn">
+              <Link href={`/projects/${project.slug}`}>Github repo</Link>
+            </button>
+            {/* <button className="case-btn btn">
+              <Link href={`/projects/${project.slug}`}>View Case Study</Link>
+            </button> */}
           </div>
-          <div className="link">
-            <Link href={`/projects/${project.slug}`}><a title="View Website"><FaRegEye /></a></Link>
-            <Link href={project.github}><a target="_blank" title="View Source code"><FaGithub /></a></Link>
-          </div>
-        </header>
-        <p className="des" >{project.des}</p>
-          <div className="lang">{project.tech.map((item:any, i:any) => (
-            <small key={i}>{item?.name}</small>
-          ))}</div>
-        
-      </div>
+        </div>
+      </ImageBox>
     </Card>
   )
 }
 
 const Card = styled.section`
-    border: solid 1px ${({ theme }) => theme.text};
-    border-radius: 10px;
-    padding: 20px;
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    display: flex;
-    align-items: center;
-    box-shadow: 1px -1px 14px rgba(0,0,0,0.1);
-    line-height: 24px;
-    cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10rem;
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .headFlex {
-        display: flex;
-        align-items: center;
-      }
-      a {
-        font-size: 0.8rem;
-      }
-      .link a {
-        margin-left: 1rem;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        &:hover {
-          color: #333;
-        }
-      }
-    }
-    .lang {
-      font-size: 0.8rem;
-      list-style: none;
-      text-align: left;
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-
-      small {
-        margin: 0.5rem 0.5rem 0 0;
-        padding: 1px 8px;
-        border-radius: 4px;
-        transition: all 0.3s ease-in;
-        color: ${( {theme} ) => theme.text};
-        border: solid 1px #f1f1f1;
-        &:hover {
-          box-shadow: 1px -1px 10px rgba(0,0,0,0.1);
-          cursor: pointer;
-          border: solid 1px ${({ theme }) => theme.text};
-        }
-      }
-    }
-
-    .des {
-      font-size: 0.9rem;
-      color: ${({ theme }) => theme.text};
-    }
-
-    .protitle {
-      font-size: 1rem;
-      margin: 0;
-    }
-    .logo {
-      font-size: 1rem;
-      margin-right: 1rem;
-      font-weight: 900;
-    }
+  &:nth-child(2) {
+    flex-direction: row-reverse;
   }
-
-  .viewLink {
-    margin: 3rem auto 0rem;
-    text-align: center;
-    a {
-      color: #5f5f5f;
-      font-weight: 500;
-      padding: 10px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      &:hover {
-        background: #dfdfdf;
-
-      }
-    }
-  }
-
 
   @media(max-width: 768px) {
-    .title {
-      font-size: 28px;
-    }
+    flex-direction: column-reverse;
 
-    .projectCard {
-      .protitle {
-        font-size: 1rem;
-      }
-
-      .logo {
-        font-size: 1rem;
-        margin-right: 1rem;
-        font-weight: 900;
-      }
-
-      .header {
-        .link a {
-          margin-left: 0.5rem;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-          color: #5d5c5c;
-          &:hover {
-            font-size: 1rem;
-            color: #ccc;
-          }
-        }
-      }
+    &:nth-child(2) {
+      flex-direction: column-reverse;
     }
   }
 `;
+
+const Content = styled.div`
+  width: 40%;
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  p {
+    color: ${({ theme }) => theme.text};
+  }
+
+  .tech {
+    margin-right: 1rem;
+    font-weight: 900;
+  }
+
+  @media(max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const ImageBox = styled.div`
+  width: 55%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s all ease;
+  
+  img {
+    // z-index: 1;
+    height: 100%;
+    // transition: 0.5s all ease;
+  }
+
+  .overlay-container {
+    transition: 0.5s all ease;
+    padding: 2rem;
+    position: absolute;
+    left: -100rem;
+    top: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover .overlay-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 2rem;
+    transition: 0.5s all ease;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    margin: 0 1rem;
+    text-transform: uppercase;
+  }
+
+  .web-btn {
+    background: ${({ theme }) => theme.brand};
+    color: ${({ theme }) => theme.white};
+  }
+  .case-btn {
+    background: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.brand};
+    border: solid 2px ${({ theme }) => theme.brand};
+  }
+
+  @media(max-width: 768px) {
+    width: 100%;
+
+    .btn {
+      padding: 1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      margin: 0 1rem;
+      text-transform: uppercase;
+    }
+
+    .web-btn {
+      background: ${({ theme }) => theme.brand};
+      color: #fff;
+    }
+    .case-btn {
+      background: transparent;
+      color: ${({ theme }) => theme.brand};
+      border: solid 2px ${({ theme }) => theme.brand};
+    }
+  }
+`
 
 export default Projects

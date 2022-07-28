@@ -19,8 +19,9 @@ const Header = styled.h2`
   line-height: 1;
 
   @media(max-width: 768px) {
-    font-size: 30px;
+    font-size: 1.6rem;
     line-height: 1.2;
+    margin-bottom: 1.5rem;
   }
 `
 

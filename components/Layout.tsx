@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 const Layout: NextPage = ({title, keyword, description, children}:any) => {
   return (
-    <main className="container">
+    <main className="containe">
       <Head>
         <title>{title}</title>
         <meta name="keyword" content={keyword} />

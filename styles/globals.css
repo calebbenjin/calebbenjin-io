@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 1rem;
   line-height: 24px;
+  color: #b3a9e0;
 }
 
 a {
@@ -25,8 +26,6 @@ a {
 p {
   color: #444444;
 }
-
-
 
 @media(max-width: 800px) {
   .container {
