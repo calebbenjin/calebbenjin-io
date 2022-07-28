@@ -42,7 +42,7 @@ const HeroContainer = styled.div`
       line-height: 1.5;
       z-index: 99;
       
-      background: linear-gradient(-45deg, #6355a4, ${({ theme }) => theme.brandBlue}, #fff, ${({ theme }) => theme.brand});
+      background: linear-gradient(-15deg, ${({ theme }) => theme.brand}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brand});
       background-size: 300%;
       font-weight: 900;
       font-size: 5vw;
@@ -99,7 +99,7 @@ const HeroContainer = styled.div`
         line-height: 1.3;
         text-align: left;
 
-        background: linear-gradient(-45deg, #6355a4,  ${({ theme }) => theme.brandBlue}, #fff, ${({ theme }) => theme.brand});
+        background: linear-gradient(-15deg, ${({ theme }) => theme.brand}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brand});
         background-size: 300%;
         font-weight: 900;
         font-size: 2rem;
