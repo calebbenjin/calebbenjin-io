@@ -6,22 +6,22 @@ import { BsLinkedin, BsTwitter, BsInstagram, BsGithub } from 'react-icons/bs'
 const SocialMediaButtons = () => {
   return (
     <SocialMediaStyle>
-      <Link href="" passHref>
+      <Link href="https://www.linkedin.com/in/calebbenjin/" passHref>
         <div className="icon">
           <BsLinkedin />
         </div>
       </Link>
-      <Link href="" passHref>
+      <Link href="https://twitter.com/calebbenjin" passHref>
         <div className="icon">
           <BsTwitter />
         </div>
       </Link>
-      <Link href="" passHref>
+      <Link href="https://www.instagram.com/calebbenjin" passHref>
         <div className="icon">
           <BsInstagram />
         </div>
       </Link>
-      <Link href="" passHref>
+      <Link href="https://github.com/calebbenjin" passHref>
         <div className="icon">
           <BsGithub />
         </div>
