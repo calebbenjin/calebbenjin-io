@@ -10,26 +10,31 @@ const SinglePostPage = ({frontmatter:{author_image, author, cover_image, title, 
 
   return (
     <Layout>
-      <Heading>{title}</Heading>
-      <Container>
-        <div className="author">
-          <Image src={author_image} alt={author} width="40" height="40" />
-          <small>{author}</small>
-        </div>
-        <small>{date}</small>
-      </Container>
+      <div className="container">
+        <Heading>{title}</Heading>
+        <Container>
+          <div className="author">
+            <Image src={author_image} alt={author} width="40" height="40" />
+            <small>{author}</small>
+          </div>
+          <small>{date}</small>
+        </Container>
 
-      <Image src={cover_image} alt={author} width="800" height="500" />
+        <Image src={cover_image} alt={author} width="800" height="500" />
 
-      <BlogContent>
-        <div dangerouslySetInnerHTML={{__html: marked.parse(content)}}></div>
-      </BlogContent>
+        <BlogContent>
+          <div dangerouslySetInnerHTML={{__html: marked.parse(content)}}></div>
+        </BlogContent>
+      </div>
     </Layout>
   )
 }
 
 const BlogContent = styled.div`
   margin: 3rem 0;
+  overflow: hidden;
+  ${'' /* background: #fff; */}
+
 
   p {
     margin: 15px 0;
@@ -43,6 +48,10 @@ const BlogContent = styled.div`
     line-height: 2.3;
     font-weight: bold;
     margin: 10px 0;
+  }
+
+  img {
+    margin: 0 auto;
   }
 
   .blog-text pre {

@@ -7,18 +7,18 @@ import Link from 'next/link'
 const BlogSection = ({title, showMore, data}:any) => {
   return (
     <Section>
-      <Heading>{title}</Heading>
+      <div className="container">
+        <Heading>{title}</Heading>
 
-      
-
-      <div className="gridContainer">
-        {data.map((post:any) => (
-          <BlogCard key={post.id} post={post} />
-        ))}
+        <div className="gridContainer">
+          {data.map((post:any) => (
+            <BlogCard key={post.id} post={post} />
+          ))}
+        </div>
+        {showMore ? <div className="viewLink">
+          <Link href="/blog/"><a>See more</a></Link>
+        </div> : null}
       </div>
-      {showMore ? <div className="viewLink">
-        <Link href="/blog/"><a>See more</a></Link>
-      </div> : null}
     </Section>
   )
 }

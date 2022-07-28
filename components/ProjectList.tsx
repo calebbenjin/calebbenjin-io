@@ -31,7 +31,8 @@ const Projects = ({data, showMore}:any) => {
 
   return (
     <ProjectSection>
-      <Heading>Projects</Heading>
+      <div className="container">
+      <Heading>Projects.</Heading>
       {/* <ToggleButtons>
         <button 
         className={state.active === 'projects' ? 'active' : ''} 
@@ -55,13 +56,26 @@ const Projects = ({data, showMore}:any) => {
       {showMore ? <div className="viewLink">
         <Link href="/projects"><a>See more</a></Link>
       </div> : null}
+    </div>
+      
     </ProjectSection>
   )
 }
 
 const ProjectSection = styled.section`
-  margin: 5rem 0;
+  background: ${({ theme }) => theme.white};
+  padding: 3rem 0;
 
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+  
   .viewLink {
     margin: 3rem auto 0rem;
     text-align: center;
@@ -80,21 +94,29 @@ const ProjectSection = styled.section`
   }
 
   .cardWrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-gap: 30px;
     margin-bottom: 2rem;
   }
 
   @media(max-width: 768px) {
+    .viewLink {
+      margin: 0 auto;
+      text-align: center;
+    }
     .cardWrapper {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 20px;
     }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
   }
 `;
-
 
 const fadeIn = keyframes`
   from {

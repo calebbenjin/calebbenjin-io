@@ -1,42 +1,64 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import profileImage from '../public/profileImage.jpg'
+import LeftBubble from './LeftBubble'
+import RightBubble from './RightBubble'
+import SocialMediaButtons from './SocialMediaButtons'
 
 const Hero = () => {
   return (
     <>
       <HeroContainer>
-        <div className="contentBox">
-          <h1 className="name">Caleb Benjamin</h1>
-          <h4 className="title"><span>Frontend Software Engineer at</span> Bojale-Labs</h4>
-          <p className="intro">Am an enthusiastic and resourceful engineer who is passionate about building great products.  I love being part of a team, whilst enjoying the autonomous nature of working remotely. I have 4+ years of experience with component-based architecture using libraries such as JavaScript, TypeScript, ReactJs, NextJs, Webpack, Styled Components, Rollup, SvelteJs, Redux, Git, OAuth, SASS</p>
-          {/* <p className="intro">I have a robust problem-solving skill, and a proven experience in creating thoughtful digital products that lie at the interaction of beauty, that are  functional, maintainable, and has scalable context. I also help developers build a faster web app. I love Teaching and Writing about web development, serverless, React, and Next.js.</p> */}
+        <LeftBubble />
+        <div className="container">
+          <div className="contentBox">
+            <h1 className="name">I join teams to build next generation web apps, using cutting edge technologies.</h1>
+          </div>
+          <SocialMediaButtons />
         </div>
-        <div className="ImageBox">
-          <Image src={profileImage} alt="ProfileImage" width="150" height="150" placeholder="blur" />
-        </div>
+        <RightBubble />
+        <RightBubble />
       </HeroContainer>
     </>
-
   )
 }
 
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
-  margin-top: 4rem;
+  height: 90vh;
+  overflow: hidden !important;
 
   .contentBox {
-    width: 65%;
+    width: 100%;
+    text-align: center;
     color: ${({ theme }) => theme.text};
+    z-index: 9;
 
     .name {
-      font-weight: 900;
-      font-size: 48px;
       color: ${({ theme }) => theme.text};
-      line-height: 24px;
+      line-height: 1.5;
+      z-index: 99;
+      
+      background: linear-gradient(-45deg, #6355a4, ${({ theme }) => theme.brandBlue}, #333, ${({ theme }) => theme.brand});
+      background-size: 300%;
+      font-weight: 900;
+      font-size: 5vw;
+      letter-spacing: -5px;
+      text-transform: capitalize;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: animated_text 8s ease-in-out infinite;
+      -moz-animation: animated_text 8s ease-in-out infinite;
+      -webkit-animation: animated_text 8s ease-in-out infinite;
+
+      @keyframes animated_text {
+        0% { background-position: 0px 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0px 50%; }
+      }
     }
 
     .intro {
@@ -46,7 +68,7 @@ const HeroContainer = styled.div`
 
     .title {
       font-weight: 700;
-      margin-top: 2rem;
+      // margin-top: 2rem;
 
       span {
         font-weight: 400;
@@ -67,27 +89,33 @@ const HeroContainer = styled.div`
   @media(max-width: 768px) {
     flex-direction: column-reverse;
     margin-top: 1rem;
+    height: 30vh;
 
     .contentBox {
       width: 100%;
 
       .name {
-        font-weight: 900;
-        font-size: 30px;
         color: ${({ theme }) => theme.text};
-      }
-    }
+        line-height: 1.3;
+        text-align: left;
 
-    .ImageBox {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-bottom: 2rem;
+        background: linear-gradient(-45deg, #6355a4,  ${({ theme }) => theme.brandBlue}, #333, ${({ theme }) => theme.brand});
+        background-size: 300%;
+        font-weight: 900;
+        font-size: 2rem;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animated_text 10s ease-in-out infinite;
+        -moz-animation: animated_text 10s ease-in-out infinite;
+        -webkit-animation: animated_text 10s ease-in-out infinite;
 
-      img {
-        width: 120px !important;
-        height: 120px !important;
+        @keyframes animated_text {
+          0% { background-position: 0px 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0px 50%; }
+        }
       }
     }
   }

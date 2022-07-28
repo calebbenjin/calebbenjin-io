@@ -4,7 +4,8 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <FooterSection>
-      <div>
+     <div className="container">
+     <div>
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -40,16 +41,20 @@ const Footer = () => {
           <a>Projects</a>
         </Link>
       </div>
+     </div>
     </FooterSection>
   )
 }
 
 const FooterSection = styled.footer`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 2rem 0 3rem;
   border-top: solid 1px #d6d6d6;
   margin-top: 4rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 0 3rem;
+  }
 
   div a{
     display: block;

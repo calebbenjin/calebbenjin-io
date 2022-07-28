@@ -11,53 +11,108 @@ import { sortByDate } from '../lib'
 import svelteLogo from '../public/svelte.png'
 import krakenLogo from '../public/kraken.png'
 import RicnosLogo from '../public/logo.svg'
+import CapitalRollupLogo from '../public/logo.png'
+import project1 from '../public/pro1.png'
+import project2 from '../public/project2.png'
+import project3 from '../public/project3.png'
+import project4 from '../public/project4.png'
+import AboutSection from '../components/AboutSection'
 
 
 const packages = {
   projects: [
     {
       id: 1,
-      logo: RicnosLogo,
+      image: project1,
       previewImg: "Preview Image",
+      task: [
+        {
+          title: "Developed a flexible and well-structured design system from the ground up.",
+        },
+        {
+          title: "Build a smart waitlist system with over 3000 new users",
+        },
+        {
+          title: "Implement Secure HttpOnly Cookie.",
+        },
+        {
+          title: "Build a functional Defi calculator",
+        },
+        {
+          title: "Develop a secure user dashboard",
+        },
+        {
+          title: "Used React Hooks to manage state and to keep information organized",
+        },
+        {
+          title: "Integrate recurring stripe-payment with webhook",
+        },
+        {
+          title: "Used React-Form-Hook to manage form state and validation.",
+        },
+        {
+          title: "Used Styled-Component for styling and create custom theme",
+        },
+      ],
+      name: 'CapitalRollup',
+      slug: 'CapitalRollup',
+      des: 'CapitalRollup offers crypto indexes to provide passive long-term crypto investment opportunities for our users. In addition to this, we help you save through Dollar Cost Averaging (DCA). Our goal is to help everyday people grow their wealth with as little as $5.',
+      github: "https://github.com/Bojale-Labs/capitalrollup_landing_page",
+      url: "https://capitalrollup.com/",
+      tech: [
+        {name: "TypeScript"},
+        {name: "NextJs"},
+        {name: "Redux"},
+        {name: "Nodejs"},
+        {name: "Styled-Component"},
+      ]
+    },
+    {
+      id: 1,
+      image: project2,
+      previewImg: "Preview Image",
+      task: [
+        {
+          title: "Developed a flexible and well-structured design system from the ground up.",
+        },
+        {
+          title: "Implement Secure HttpOnly Cookie for login and registration process",
+        },
+        {
+          title: "Used React Hooks to manage state and to keep information organized",
+        },
+        {
+          title: "Build a full design system from ground up, using the atomic design architecture.",
+        },
+        {
+          title: "Develop a secure user for the supper admin and drivers dashboard",
+        },
+        {
+          title: "Develop a real-time chatting system",
+        },
+        {
+          title: "Integrate recurring stripe-payment with webhook",
+        },
+        {
+          title: "Used React-Form-Hook to manage form state and validation.",
+        },
+        {
+          title: "Used Styled-Component for styling and create custom theme",
+        },
+      ],
       name: 'Ricnos Logistic',
-      slug: 'Ricnos Logistic',
-      des: 'A logistice management application logistice management application',
-      github: "https://github.com/calebbenjin/ricnos-user-one",
+      slug: 'CapitalRollup',
+      des: 'Ricnos is a reliable logistics and Transport Solutions Saves your Time',
+      github: "https://github.com/calebbenjin/ricnosadmin1",
       url: "https://ricnosapp.vercel.app/",
       tech: [
-        {name: "Next.js"},
-        {name: "Chakara-ui"},
+        {name: "TypeScript"},
+        {name: "NextJs"},
         {name: "Redux"},
+        {name: "Nodejs"},
+        {name: "Styled-Component"},
       ]
     },
-    {
-      id: 2,
-      logo: svelteLogo,
-      previewImg: "Preview Image",
-      name: 'Headless-Svelte-ui',
-      slug: 'Headless-Svelte-ui',
-      des: 'A group of resusable headless components that makes it easy building Svelte Apps, with over 90% of styles props.',
-      github: "https://github.com/Bojale-Labs/svelte-component-library",
-      url: "https://www.npmjs.com/package/@bojalelabs/headless-svelte-ui",
-      tech: [
-        {name: "Sveltejs"},
-      ]
-    },
-    {
-      id: 3,
-      logo: krakenLogo,
-      previewImg: "Preview Image",
-      name: 'Krakenedu',
-      slug: 'Krakenedu',
-      des: 'An that assess developer skill level, expose them to the right courses and jobs, make employers notice and attract relevant opportunities',
-      github: "https://github.com/Bojale-Labs/KrakenEdu-Frontend",
-      url: "https://krakenedu.com/",
-      tech: [
-        {name: "ReactJs"},
-        {name: "Sass"},
-      ]
-    }
-    
   ]
 };
 
@@ -65,7 +120,9 @@ const Home: NextPage = ({posts}:any) => {
   return (
     <Layout>
       <Hero />
-      <Stack />
+      <AboutSection />
+      {/* <Stack /> */}
+
       <ProjectList data={packages} showMore />
       <BlogList title="Featured Posts" data={posts} showMore />
     </Layout>

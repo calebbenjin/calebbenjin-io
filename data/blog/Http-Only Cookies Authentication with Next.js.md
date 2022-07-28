@@ -45,6 +45,7 @@ Now what we are going to do in our application is create an API routes within Ne
 
 #### Cloning And Setting Up Our Project
 So like l said I have already created a starter files so Jump right in and clone it.
+
 ```
 https://github.com/calebbenjin/starter-jwtauth-nextjs
 ```
@@ -58,7 +59,7 @@ So we are going to create a new folder in the `root` called `context` then insid
 
 So We want to basically create a context using `createContext` from react. So now go inside your `AuthContext` file and fill it with this code snippet below.
 
-```
+```javascript
 import { useState, useEffect, createContext } from 'react'
 import { useRouter } from 'next/router'
 import {NEXT_URL} from '../config/index'
@@ -108,7 +109,7 @@ export default AuthContext
 Now let me explain the code above. We imported some necessary hooks from react like `{ useState, useEffect, createContext }` and also `{useRouter}` from `next/router`, Next we imported our `{API_URL}` this will be your API endpoint URL of choice. Next we create a context by creating a variable called `AuthContext` and set it to `createContext`.
 Next we created a provider that needs to wrap around our application so we can provides certain functions to our application and whatever component needed. Next we created some state `[user, setUser]` and `[error, setError]` and we set the default to null. Next we created some methods like `register, login, logout, checkUserLoggedIn` which we will use to hit our backend routes. Then as you can see we are exposing all the methods created so it can be accessible all over the application. So let's do that by going into our `_app.js` file in the pages folder and bring in our `AuthProvider` as you can see below.
 
-```
+```javascript
 import '../styles/globals.css'
 import Navbar from '../components/Navbar'
 import {AuthProvider} from '../context/AuthContext'
@@ -129,7 +130,7 @@ export default MyApp
 So in this section we are going to setup our login functionality and get the JWT token, we're not going to store it just yet but what we want to do is to create an `api-route` to connect to and in that `api-route` is were we are going to communicate with our backend-endpoint, we are going to send our request from there get the token and then our next step is to save the Http-Only Cookie. So let's dive right in by getting into our api folder and create a new file called `login.js` ![api-route folder](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/m13egb7eauy9gb6p7rls.jpg)
 Now copy the code below and paste in the `login.js` file you have created, I will explain things in details below.
 
-```
+```javascript
 import { API_URL} from '../config/index'
 
 export default async (req, res) => {
@@ -147,7 +148,7 @@ Next we want to make sure if is the `req.method` is equal to `POST`, else we wan
 Next after making sure is a post request we want to get the email, and password from the `req.body` so we do that by destructuring the email and password from `req.body`. 
 Now in this our `api route` this were we want to login our user with actual `backend api-endpoint` or l should say fetch our token. Now go ahead and paste the code below inside of your code.
 
-```
+```javascript
    // destructure email, and password
     const { email, password } = req.body
 
@@ -176,7 +177,7 @@ Now in this our `api route` this were we want to login our user with actual `bac
 
 So if you're following correctly your code show look like this below.
 
-```
+```javascript
 import { API_URL} from '../config/index'
 
 export default async (req, res) => {
@@ -216,7 +217,7 @@ So what we have done so far, which is creating this `api-endpoint` inside our Ne
 You can `console.log(data.jwt)` to see it.
 Next let's head over to `AuthContext` and go to the `login` method we create so we can make a request to our `api/login` api-endpoint we have created. So paste these code inside of the `login` function.
 
-```
+```javascript
 const res = await fetch(`${NEXT_URL}/api/login`, {
     method: 'POST',
     headers: {
@@ -240,7 +241,9 @@ const res = await fetch(`${NEXT_URL}/api/login`, {
 ```
 Now we are fetching the data from the api route we create in `api/login`. After that we check if the request is okay then we setUser(data.user) and make a redirect to our dashboard using `next/router`, But if is not `Ok` then we want to setError(data.message) and also setError(null) so the error will not remain in our state.
 Next let's head on to our login page and bring in our login method from `AuthProvider`, so now update your login page with these code
-```
+
+```javascript
+
 import AuthContext from '../context/AuthContext'
 
   const { login, error, user, isLoading } = useContext(AuthContext)
@@ -248,6 +251,7 @@ import AuthContext from '../context/AuthContext'
   const handleLoginSubmit = async ({ email, password }) => {
     login({email, password})
   }
+
 ``` 
 We are importing our AuthContext, then we destructure out `login, error, user, isLoading` from it. Then in our handleLoginSubmit function we then call in the `login({email, password})` and then pass in `email, and password`.
 Now at this point our app should be working very fine, next we are going to go head and store our jwt in the server httpOnly Cookie. Let's dive in.
@@ -256,12 +260,12 @@ Now at this point our app should be working very fine, next we are going to go h
 Now what we want to do is set the Cookies, there's quite a few ways to do this, but we are going to use a package called `cookie` that let's us easily set cookie on the server-side, if you check in our `package.json` file you will see that l have install it already, or you can install it @ `yard add cookie` or `npm install cookie` if you are not using the start file.
 Next we going to bring in our `api/login.js` file 
 
-```
+```javascript
 import cookie from 'cookie'
 ```
 So go down the code where we have our `@todo Set Cookie` comment and add these code there.
 
-```
+```javascript
   res.setHeader(
     'Set-Cookie',
     cookie.serialize('token', String(apiRes.data.token), {
@@ -278,7 +282,7 @@ Now as you can see we are setting res.setHeader that's coming with `'Set-Cookie'
 ### Persist Logged in User
 Now we are going to persist the user and that is going to happen with the `checkUserLoggedIn` function we created in our `AuthContext`. Now this `checkUserLoggedIn` is going to hit a new route called `user` so go ahead and create a `user.js` file inside of our `api folder`. Basically what we are going to do in this `user.js` is to hit the users endpoint of your api, what we can do is we can send our token which we have in our cookie right now, once we send the token it will give you back the user for that token, then what we do with in `AuthContext` is set the `user`. Now go head and copy the code and paste in the `user.js` file you have created.
 
-```
+```javascript
 import { API_URL } from '@/lib/index'
 import cookie from 'cookie'
 
@@ -318,7 +322,9 @@ export default user
 Now inside our function we are first checking to see if the cookie exist `(!req.headers.cookie)` if that's not there then `res.status(403).json({message: 'Not Authorized'})` and then we `return`.
 But if is found then we need to pass the cookie and get the token. we then destructure the  token `const { token } = cookie.parse(req.headers.cookie)` this will put the token into a variable and then we can send into our backend-Api. Once we get the user back. and then check if the apiRes.ok then we want to set the `status(200)` and send the user object. else the user is forbidden `res.status(403).json({message: 'User forbidden'})`.
 Now let's save that and hit this api-route with `checkUserLoggedIn`. now let's go to our `AuthContext` and fill in out `checkUserLoggedIn` with this code, just a simple get request
-```
+
+
+```javascript
  const checkUserLoggedIn = async () => {
     const res = await fetch(`${NEXT_URL}/api/user`)
     const data = await res.json()
@@ -331,7 +337,8 @@ Now let's save that and hit this api-route with `checkUserLoggedIn`. now let's g
   }
 ```
 Now we are checking that if everything goes ok then we're setting `setUser(data.user.data.user)` the user we get back from our `backend-api` else we are going to `setUser` to `null` and then we want to call this up here in a `useEffect` so let's go under our state and call the useEffect. 
-```
+
+```javascript
   useEffect(() => checkUserLoggedIn(), [])
 
 ```
@@ -339,7 +346,7 @@ Now we are checking that if everything goes ok then we're setting `setUser(data.
 ### Logout And Destroy Cookie
 Now we are going to have another api route for this because we need to destroy the cookie that's going to happened in our server which in our api route. So let's create a `logout.js` in our api folder. after we have done that, go ahead and paste the code inside of the `logout.js` file we just create. I will explain the code below.
 
-```
+```javascript
 import cookie from 'cookie'
 
 export default = async (req, res) => {
@@ -370,7 +377,9 @@ export default logout
 All we are doing here is just to destroy the cookie. Now if you look at the `cookie.serialize('token', '',)` you will see that the token is now set to an empty string.
 Next we replace the `maxAge` with `expires` and we want to set it to something that's pass and we did that by passing a new data and pass in zero. And that's it this should destroy the cookie.
 Now from our logout function in out `AuthContext` we just want to call that `api/logout.js` Now add these code inside of the `logout` function inside of the `AuthContext`
-```
+
+
+```javascript
 
   const logout = async () => {
     const res = await fetch(`${NEXT_URL}/api/logout`, {
@@ -385,7 +394,7 @@ Now from our logout function in out `AuthContext` we just want to call that `api
 ```
 What we are doing here is simply hitting that `api/logout` route and we then `setUser(null)` to `null`, this will remove our cookie, and redirect the user to the login page. Now let's go to our `Navbar` components and bring in the `logout` method from `AuthContext`, So now update your `navbar` component with this code below
 
-```
+```javascript
 import { useContext } from 'react'
 
 const { logout, user } = useContext(AuthContext)
@@ -406,7 +415,7 @@ Now the next thing is the register page, basically this will do the same thing a
 Now let's go to our `api` folder and create our `register.js` file.
 Now go ahead and copy these code and paste inside of your `register.js` file.
 
-```
+```javascript
 import { API_URL } from '../../config/index'
 import cookie from 'cookie'
 
@@ -459,7 +468,9 @@ export default register
 
 ```
 Now if you take a close look you will see that we are doing the same thing as the login route, the little difference here is that we are accepting an extra field which is `fullname`. So next let's dive right into the `AuthContext` and handle our `register` route we have just created. You can copy these code below and paste it in the `register async function` we created.
-```
+
+
+```javascript
  // Resister user
   // ====================================
   const signup = async ({ fullname, email, password }) => {
@@ -484,10 +495,14 @@ Now if you take a close look you will see that we are doing the same thing as th
 ```
 Now we are hitting the `api/register.js` route that we just created, we are sending along the user object which is the `fullname, email, password` then we check to see if the response is ok, if is okay then we set the user and push/redirect to the dashboard and if there's an error we set that in the state.
 Now let's go inside the `register` and update our `handleRegisterSubmit` with these code
-```
+
+
+```javascript
+
 const handleRegisterSubmit = async ({ fullname, email, password }) => {
     register({ fullname, email, password })
   }
+
 ```
 Now you can go ahead and test your app, everything should be working very fine now.
 

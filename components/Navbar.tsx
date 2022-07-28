@@ -24,34 +24,28 @@ const Navbar = ({toggleTheme}:any) => {
             <Link href="/">
               <a className="navLink">Home</a>
             </Link>
+            <Link href="/snippets">
+              <a className="navLink">About me.</a>
+            </Link>
             <Link href="/projects">
               <a className="navLink">Projects</a>
             </Link>
             <Link href="/blog">
               <a className="navLink">Blog</a>
             </Link>
-            <Link href="/snippets">
-              <a className="navLink">Code Snippets</a>
-            </Link>
         </div>
-        <Link href="/">
-          <a className="MobileLogo">Caleb<span>benjin.</span></a>
-        </Link>
         <div className="navContainer">
           <Link href="/">
-            <a className="navLogo">Caleb<span>benjin.</span></a>
-          </Link>
-          <Link href="/">
             <a className="navLink">Home</a>
+          </Link>
+          <Link href="/about">
+            <a className="navLink">About me.</a>
           </Link>
           <Link href="/projects">
             <a className="navLink">Projects</a>
           </Link>
           <Link href="/blog">
-            <a className="navLink">Blog</a>
-          </Link>
-          <Link href="/snippets">
-            <a className="navLink">Code Snippets</a>
+            <a className="navLink">Articles</a>
           </Link>
         </div>
         <div className="darkMoodIcon" onClick={toggleTheme}>
@@ -72,7 +66,10 @@ const NavBar: any = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+
+    width: 65%;
+    margin: 0 auto;
   }
 
 
@@ -89,15 +86,17 @@ const NavBar: any = styled.nav`
   }
 
   .navContainer {
-    width: 70%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     .navLink {
       text-transform: capitalize;
       transition: all 0.3s ease-in;
       padding: 5px 10px;
+      margin-right: 2rem;
+      font-size: 1.1rem;
       border-radius: 4px;
       &:hover {
         background: #f1f1f1;
@@ -107,7 +106,7 @@ const NavBar: any = styled.nav`
 
     .navLogo {
       font-weight: 900;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       span {
         color: #ff9100;
       }
@@ -116,17 +115,19 @@ const NavBar: any = styled.nav`
 
   .darkMoodIcon {
     background: ${({ theme }) => theme.body};
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 50%;
     font-size: 1.2rem;
     transition: all 0.3s ease-in;
+    border: solid 1px ${({ theme }) => theme.text};
     &:hover {
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
+      transform: scale(1.3)
     }
     &::focus {
       box-shadow: 1px -1px 14px rgba(0,0,0,0.3);
@@ -137,6 +138,12 @@ const NavBar: any = styled.nav`
 
     .navContainer {
       display: none;
+    }
+
+    .container {
+      padding: 1rem 0;
+      width: 85%;
+      margin: 0 auto;
     }
 
     .mobileToggle {
