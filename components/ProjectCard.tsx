@@ -82,6 +82,12 @@ const Content = styled.div`
 
   @media(max-width: 768px) {
     width: 100%;
+
+    .tech {
+      margin-right: 1rem;
+      font-weight: 900;
+      font-size: 0.8rem
+    }
   }
 `
 
@@ -94,7 +100,7 @@ const ImageBox = styled.div`
   
   img {
     // z-index: 1;
-    height: 100%;
+    // width: 100px !important;
     // transition: 0.5s all ease;
   }
 

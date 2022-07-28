@@ -121,8 +121,6 @@ const Home: NextPage = ({posts}:any) => {
     <Layout>
       <Hero />
       <AboutSection />
-      {/* <Stack /> */}
-
       <ProjectList data={packages} showMore />
       <BlogList title="Featured Posts" data={posts} showMore />
     </Layout>

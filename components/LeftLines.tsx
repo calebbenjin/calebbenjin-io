@@ -45,17 +45,39 @@ const LeftLinesStyle = styled.div`
     animation: morph 1.5s linear infinite;
   }
 
- 
 
-@keyframes morph {
-  0%, 100% {
-    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  @keyframes morph {
+    0%, 100% {
+      border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    }
+    33% {
+      border-radius: 72% 28% 48% / 28% 28% 72% 72%;
+    }
+    66% {
+      border-rdius: 100% 56% 100% / 100% 100% 56% 56%;
+    }
   }
-  33% {
-    border-radius: 72% 28% 48% / 28% 28% 72% 72%;
-  }
-  66% {
-    border-rdius: 100% 56% 100% / 100% 100% 56% 56%;
+
+  @media(max-width: 768px) {
+    position: absolute;
+    left: -28rem;
+    bottom: 0;
+
+
+    .line-1 {
+      height: 20rem;
+      width: 30rem;
+      border: dashed 3px ${({ theme }) => theme.brandBlue};
+      transform: rotate(20deg);
+      animation: morph 1.5s linear infinite;
+    }
+    .line-2 {
+      height: 20rem;
+      width: 32rem;
+      border: dashed 3px ${({ theme }) => theme.brand};
+      transform: rotate(20deg);
+      animation: morph 1.5s linear infinite;
+    }
   }
 `
 
