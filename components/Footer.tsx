@@ -23,7 +23,7 @@ const Footer = () => {
         <Link href="https://twitter.com/calebbenjin">
           <a target="_blank">Twitter</a>
         </Link>
-        <Link href="https://www.instagram.com/calebbenjin.dev/">
+        <Link href="https://www.instagram.com/calebbenjin">
           <a target="_blank">Instagram</a>
         </Link>
         <Link href="https://www.linkedin.com/in/calebbenjin/">
