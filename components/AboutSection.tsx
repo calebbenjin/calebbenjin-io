@@ -95,9 +95,9 @@ const ImageBox = styled.div`
   @media(max-width: 768px) {
     width: 13rem;
     height: 12rem;
-    margin: 3rem auto;
+    margin: 3rem auto 0rem;
 
-    display: none;
+    // display: none;
   }
 `
 

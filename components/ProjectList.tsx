@@ -32,21 +32,21 @@ const Projects = ({data, showMore}:any) => {
   return (
     <ProjectSection>
       <div className="container">
-      <Heading>Projects.</Heading>
-      {/* <ToggleButtons>
-        <button 
-        className={state.active === 'projects' ? 'active' : ''} 
-        type="button" 
-        aria-label="Projects"
-        onClick={() => handlePricingPlan('projects')}
-        >Projects</button>
-        <button 
-        className={state.active === 'sideProjects' ? 'active' : ''} 
-        type="button" 
-        aria-label="sideProjects"
-        onClick={() => handlePricingPlan('sideProjects')}
-        >Side Projects</button>
-      </ToggleButtons> */}
+        <Heading>Projects.</Heading>
+        {/* <ToggleButtons>
+          <button 
+          className={state.active === 'projects' ? 'active' : ''} 
+          type="button" 
+          aria-label="Projects"
+          onClick={() => handlePricingPlan('projects')}
+          >Projects</button>
+          <button 
+          className={state.active === 'sideProjects' ? 'active' : ''} 
+          type="button" 
+          aria-label="sideProjects"
+          onClick={() => handlePricingPlan('sideProjects')}
+          >Side Projects</button>
+        </ToggleButtons> */}
       
       <div className="cardWrapper">
         {state.projectsPlan.map((project:any) => (
@@ -101,14 +101,15 @@ const ProjectSection = styled.section`
   }
 
   @media(max-width: 768px) {
+
+    .container {
+      width: 85%;
+      margin: 0 auto;
+    }
+
     .viewLink {
       margin: 0 auto;
       text-align: center;
-    }
-    .cardWrapper {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 20px;
     }
 
     h2 {
