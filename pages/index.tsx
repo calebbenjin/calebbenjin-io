@@ -3,26 +3,47 @@ import fs from "fs"
 import path from "path"
 import matter from 'gray-matter'
 import Hero from '../components/Hero'
-import Stack from '../components/Stack'
 import ProjectList from '../components/ProjectList'
 import BlogList from '../components/BlogList'
 import Layout from '../components/Layout'
 import { sortByDate } from '../lib'
-import svelteLogo from '../public/svelte.png'
-import krakenLogo from '../public/kraken.png'
-import RicnosLogo from '../public/logo.svg'
-import CapitalRollupLogo from '../public/logo.png'
 import project1 from '../public/pro1.png'
 import project2 from '../public/project2.png'
-import project3 from '../public/project3.png'
-import project4 from '../public/project4.png'
 import AboutSection from '../components/AboutSection'
+
+const project1Img = "https://i.ibb.co/BK1Hn0x/Screenshot-2022-08-08-at-4-05-48-PM.png"
 
 
 const packages = {
   projects: [
     {
       id: 1,
+      image: project1Img,
+      previewImg: "Preview Image",
+      task: [
+        {
+          title: "Developed a flexible and well-structured design from the ground up.",
+        },
+        {
+          title: "Using best practice of React, and CSS",
+        },
+        {
+          title: "Design is 100% the same with the Figma Design",
+        },
+      ],
+      name: 'HooBank',
+      slug: 'hoobank',
+      des: 'HooBank - One of the best Modern UI/UX Bank Design Website. Built with React.js & Tailwind CSS. Using best practice.',
+      github: "https://github.com/calebbenjin/hoobank.git",
+      url: "https://ihoobank.vercel.app",
+      tech: [
+        {name: "ReactJs"},
+        {name: "ViteJs"},
+        {name: "TailWindCSS"},
+      ]
+    },
+    {
+      id: 2,
       image: project1,
       previewImg: "Preview Image",
       task: [
@@ -30,16 +51,19 @@ const packages = {
           title: "Developed a flexible and well-structured design system from the ground up.",
         },
         {
-          title: "Build a smart waitlist system with over 3000 new users",
+          title: "Build a smart waitlist system with over 1000 new users weekly",
         },
         {
-          title: "Implement Secure HttpOnly Cookie.",
+          title: "Implement Secure HttpOnly Cookie for Login",
         },
         {
           title: "Build a functional Defi calculator",
         },
         {
           title: "Develop a secure user dashboard",
+        },
+        {
+          title: "Build a smart Currency conveter",
         },
         {
           title: "Used React Hooks to manage state and to keep information organized",
@@ -54,6 +78,7 @@ const packages = {
           title: "Used Styled-Component for styling and create custom theme",
         },
       ],
+      
       name: 'CapitalRollup',
       slug: 'CapitalRollup',
       des: 'CapitalRollup offers crypto indexes to provide passive long-term crypto investment opportunities for our users. In addition to this, we help you save through Dollar Cost Averaging (DCA). Our goal is to help everyday people grow their wealth with as little as $5.',
@@ -68,49 +93,37 @@ const packages = {
       ]
     },
     {
-      id: 1,
+      id: 3,
       image: project2,
       previewImg: "Preview Image",
       task: [
         {
-          title: "Developed a flexible and well-structured design system from the ground up.",
+          title: "React Functional components and their reusability"
         },
         {
-          title: "Implement Secure HttpOnly Cookie for login and registration process",
+          title: "React file and folder structure",
         },
         {
-          title: "Used React Hooks to manage state and to keep information organized",
+          title: "CSS flex & grid",
         },
         {
-          title: "Build a full design system from ground up, using the atomic design architecture.",
+          title: "CSS BEM Model",
         },
         {
-          title: "Develop a secure user for the supper admin and drivers dashboard",
+          title: "From soft and pleasant animations to complex gradients",
         },
         {
-          title: "Develop a real-time chatting system",
-        },
-        {
-          title: "Integrate recurring stripe-payment with webhook",
-        },
-        {
-          title: "Used React-Form-Hook to manage form state and validation.",
-        },
-        {
-          title: "Used Styled-Component for styling and create custom theme",
+          title: "Perfectly placed media queries for satisfactory responsiveness covering almost devices",
         },
       ],
-      name: 'Ricnos Logistic',
-      slug: 'CapitalRollup',
-      des: 'Ricnos is a reliable logistics and Transport Solutions Saves your Time',
+      name: 'GPT-3 Landing Page',
+      slug: 'GPT-3LandingPage',
+      des: "Let's Build Something amazing with GPT-3 OpenAI",
       github: "https://github.com/calebbenjin/ricnosadmin1",
-      url: "https://ricnosapp.vercel.app/",
+      url: "https://gbt-3-landingpage.vercel.app",
       tech: [
-        {name: "TypeScript"},
-        {name: "NextJs"},
-        {name: "Redux"},
-        {name: "Nodejs"},
-        {name: "Styled-Component"},
+        {name: "ReactJs"},
+        {name: "CSS BEM Model"},
       ]
     },
   ]
@@ -120,9 +133,8 @@ const Home: NextPage = ({posts}:any) => {
   return (
     <Layout>
       <Hero />
-      <AboutSection />
       <ProjectList data={packages} showMore />
-      <BlogList title="Featured Posts" data={posts} showMore />
+      {/* <BlogList title="Featured Posts" data={posts} showMore /> */}
     </Layout>
   )
 }

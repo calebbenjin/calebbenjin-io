@@ -6,20 +6,32 @@ type headingProp = {
 
 const Heading = (props: headingProp) => {
   return (
-    <Header>{props.children}</Header>
+    <Container>
+      <Header>{props.children}</Header>
+    </Container>
   )
 }
 
 
-const Header = styled.h2`
-  font-weight: 900;
-  font-size: 40px;
-  color: ${({ theme }) => theme.text};
-  margin-bottom: 4rem;
-  line-height: 1;
+const Container = styled.div`
+  width: 74%;
+  margin: 0 auto 10rem auto;
 
   @media(max-width: 768px) {
-    font-size: 1.6rem;
+    width: 100%;
+    margin: 0 auto 0rem auto;
+  }
+`
+
+const Header = styled.h2`
+  font-weight: 900;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 2rem;
+  line-height: 1;
+  font-size: 5rem;
+
+  @media(max-width: 768px) {
+    font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }

@@ -15,41 +15,14 @@ const Navbar = ({toggleTheme}:any) => {
   return (
     <NavBar>
       <div className="container">
-        <div className="mobileToggle" onClick={handleMobileToggle}>
-          <div className="link"></div>
-          <div className="link"></div>
-          <div className="link"></div>
-        </div>
-        <div className={`${mobileToggle ? "showMobileNav" : "mobileNav"}`}>
-            <Link href="/">
-              <a className="navLink">Home</a>
-            </Link>
-            <Link href="/snippets">
-              <a className="navLink">About me.</a>
-            </Link>
-            <Link href="/projects">
-              <a className="navLink">Projects</a>
-            </Link>
-            <Link href="/blog">
-              <a className="navLink">Blog</a>
-            </Link>
-        </div>
-        <div className="navContainer">
-          <Link href="/">
-            <a className="navLink">Home</a>
-          </Link>
-          <Link href="/about">
-            <a className="navLink">About me.</a>
-          </Link>
-          <Link href="/projects">
-            <a className="navLink">Projects</a>
-          </Link>
-          <Link href="/blog">
-            <a className="navLink">Articles</a>
-          </Link>
-        </div>
+        <h3 className="logo">Calebbenjin</h3>
         <div className="darkMoodIcon" onClick={toggleTheme}>
           <BsMoonStars />
+        </div>
+        <div>
+          <Link href="/blog">
+            <a className="navLink">Thoughts</a>
+          </Link>
         </div>
       </div>
     </NavBar>
@@ -66,50 +39,28 @@ const NavBar: any = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
-
-    width: 65%;
+    padding: 0.5rem 0;
+    width: 95%;
     margin: 0 auto;
   }
 
-
-  .MobileLogo {
-    display: none;
+  .navLogo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin: 0;
   }
 
-  .mobileToggle {
-    display: none;
-  }
-
-  .mobileNav {
-    display: none;
-  }
-
-  .navContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    .navLink {
-      text-transform: capitalize;
-      transition: all 0.3s ease-in;
-      padding: 5px 10px;
-      margin-right: 2rem;
-      font-size: 1.1rem;
-      border-radius: 4px;
-      &:hover {
-        background: #f1f1f1;
-        color: ${({ theme }) => theme.text};
-      }
-    }
-
-    .navLogo {
-      font-weight: 900;
-      font-size: 1.5rem;
-      span {
-        color: #ff9100;
-      }
+  .navLink {
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-radius: 4px;
+    border: solid 2px ${({ theme }) => theme.brand};
+    padding: 5px 20px;
+    &:hover {
+      color: ${({ theme }) => theme.brand};
+      letter-spacing: 1.5px;
     }
   }
 
@@ -127,7 +78,7 @@ const NavBar: any = styled.nav`
     &:hover {
       background: ${({ theme }) => theme.body};
       color: ${({ theme }) => theme.text};
-      transform: scale(1.3)
+      transform: scale(1.3);
     }
     &::focus {
       box-shadow: 1px -1px 14px rgba(0,0,0,0.3);
@@ -140,82 +91,38 @@ const NavBar: any = styled.nav`
       display: none;
     }
 
+    .logo {
+      font-weight: 900;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .navLink {
+      text-transform: capitalize;
+      transition: all 0.3s ease-in;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 4px;
+      border: solid 1px ${({ theme }) => theme.brand};
+      padding: 5px 10px;
+      &:hover {
+        color: ${({ theme }) => theme.brand};
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .darkMoodIcon {
+      background: ${({ theme }) => theme.body};
+      width: 30px;
+      height: 30px;
+      font-size: 0.9rem;
+    }
+
     .container {
       padding: 1rem 0;
-      width: 85%;
+      width: 90%;
       margin: 0 auto;
     }
-
-    .mobileToggle {
-      display: block;
-    .link {
-      width: 25px;
-      height: 2.5px;
-      background: ${({ theme }) => theme.text};
-      margin-bottom: 4px;
-    }
-  }
-
-    .MobileLogo {
-      display: flex;
-      font-weight: 900;
-      font-size: 0.9rem;
-      span {
-        color: #ff9100;
-      }
-    }
-
-
-    .showMobileNav {
-    transform: translateX(0%);
-    transition: all 0.5s ease-in;
-    opacity: 1;
-    position: fixed;
-    top: 6rem;
-    left: 0;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    padding: 2rem 0;
-    .navLink {
-      text-transform: capitalize;
-      transition: all 0.3s ease-in;
-      display: block;
-      line-height: 4rem;
-      padding: 10px 2rem;
-      border-bottom: solid 1px #333;
-      &:hover {
-        background: #333;
-        color: #eee;
-      }
-    }
-  }
-
-  .mobileNav {
-    display: block;
-    transform: translateX(-100%);
-    transition: all 0.5s ease-in;
-    opacity: 0.5;
-    position: fixed;
-    top: 6rem;
-    left: 0;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    padding: 2rem 0;
-    .navLink {
-      text-transform: capitalize;
-      transition: all 0.3s ease-in;
-      display: block;
-      line-height: 4rem;
-      padding: 10px 2rem;
-      border-bottom: solid 1px #333;
-      &:hover {
-        background: #333;
-        color: #eee;
-      }
-    }
-  }
   }
 `;
 
