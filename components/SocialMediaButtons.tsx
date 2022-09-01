@@ -39,12 +39,13 @@ const SocialMediaStyle = styled.div`
   z-index: 9;
 
   .icon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: transparent;
-    border: solid 2px ${({ theme }) => theme.brand};
-    color: ${({ theme }) => theme.brand};
-    font-size: 2rem;
+    box-shadow: inset 40px 0 0 0 ${({ theme }) => theme.brandBlue};
+    border: solid 2px ${({ theme }) => theme.brandBlue};
+    color: ${({ theme }) => theme.white};
+    font-size: 1.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -52,7 +53,6 @@ const SocialMediaStyle = styled.div`
     margin-bottom: 1rem;
     font-weight: 900;
     transition: all 0.5s ease;
-    box-shadow: inset 0 0 0 0 ${({ theme }) => theme.brand};
 
     &:hover {
       transition: all 0.5s ease;

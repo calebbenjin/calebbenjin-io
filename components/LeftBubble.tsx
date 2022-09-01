@@ -15,8 +15,8 @@ left: -5rem;
 top: 8rem;
 overflow: hidden;
 z-index: 0;
-width: 15rem;
-height: 15rem;
+width: 10rem;
+height: 10rem;
 background: #6355a4;
 border: solid 2px #6355a4;
 border-radius: 42% 56% 72% 28% / 42%  42% 56% 48%;
@@ -37,10 +37,10 @@ animation: morph 1.5s linear infinite;
 
 @media(max-width: 768px) {
   position: absolute;
-  left: -7rem;
-  top: 13rem;
-  width: 10rem;
-  height: 10rem;
+  left: -6rem;
+  top: 10rem;
+  width: 7rem;
+  height: 7rem;
   margin: 3rem auto;
 
   // display: none;

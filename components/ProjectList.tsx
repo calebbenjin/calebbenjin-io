@@ -33,47 +33,28 @@ const Projects = ({data, showMore}:any) => {
     <ProjectSection>
       <div className="container">
         <Heading>Projects.</Heading>
-        {/* <ToggleButtons>
-          <button 
-          className={state.active === 'projects' ? 'active' : ''} 
-          type="button" 
-          aria-label="Projects"
-          onClick={() => handlePricingPlan('projects')}
-          >Projects</button>
-          <button 
-          className={state.active === 'sideProjects' ? 'active' : ''} 
-          type="button" 
-          aria-label="sideProjects"
-          onClick={() => handlePricingPlan('sideProjects')}
-          >Side Projects</button>
-        </ToggleButtons> */}
-      
-      <div className="cardWrapper">
-        {state.projectsPlan.map((project:any) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        
+          {state.projectsPlan.map((project:any) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+
+        {/* {showMore ? <div className="viewLink">
+          <Link href="/projects"><a>See more</a></Link>
+        </div> : null} */}
       </div>
-      {showMore ? <div className="viewLink">
-        <Link href="/projects"><a>See more</a></Link>
-      </div> : null}
-    </div>
       
     </ProjectSection>
   )
 }
+
 
 const ProjectSection = styled.section`
   background: ${({ theme }) => theme.white};
   padding: 3rem 0;
 
   .container {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 10rem;
   }
   
   .viewLink {
@@ -112,10 +93,6 @@ const ProjectSection = styled.section`
       text-align: center;
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
   }
 `;
 
