@@ -1,20 +1,18 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import profileImage from '../public/profileImage.jpg'
+import heroImg from '../public/banner_bg.png'
 import LeftBubble from './LeftBubble'
-import RightBubble from './RightBubble'
-import SocialMediaButtons from './SocialMediaButtons'
 
 const Hero = () => {
   return (
     <>
       <HeroContainer>
-        <LeftBubble />
+        {/* <LeftBubble /> */}
         <div className="container">
           <div className="contentBox">
             <p className="hi">Hi, I&lsquo;m</p>
-            <h1 className="name">Caleb <br /> Benjamin</h1>
-            <p className="about">I write code, think about great designs, and a frontend engineer. Currently Frontend engineer @Capitalrollup. I&lsquo;m a Technical writer, an enthusiastic and resourceful engineer who is passionate about building great products. I love being part of a team, whilst enjoying the autonomous nature of working remotely.</p>
+            <h1 className="name">Caleb Benjamin</h1>
+            <p className="about">I write code, think about great designs, a Software Engineer, Content Creator, and Community Engineer who is currently open for a Developer Advocate role. I am passionate about building great products. I love being part of a team, whilst enjoying the autonomous nature of working remotely.</p>
           </div>
           {/* <SocialMediaButtons /> */}
         </div>
@@ -28,8 +26,12 @@ const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 100vh;
+  height: 80vh;
+  width: 100%;
   overflow: hidden !important;
+  background-image: url(./banner_bg.png);
+  background-position: right;
+  background-size: cover;
 
   .contentBox {
     width: 100%;
@@ -44,15 +46,15 @@ const HeroContainer = styled.div`
     }
 
     .about {
-      width: 75%;
-      font-size: 1.5rem;
+      width: 50%;
+      font-size: 1.2rem;
       line-height: 1.5;
-      margin-top: 3rem;
+      margin-top: 2rem;
       color: ${({ theme }) => theme.text};
     }
 
     .name {
-      color: ${({ theme }) => theme.text};
+      color: ${({ theme }) => theme.brand};
       line-height: 1;
       z-index: 99;
       margin: 0;
@@ -60,7 +62,7 @@ const HeroContainer = styled.div`
       background: linear-gradient(-15deg, ${({ theme }) => theme.brand}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brandBlue}, ${({ theme }) => theme.brand});
       background-size: 300%;
       font-weight: 900;
-      font-size: 8rem;
+      font-size: 5rem;
       // letter-spacing: -5px;
       text-transform: capitalize;
       -webkit-background-clip: text;
@@ -103,18 +105,24 @@ const HeroContainer = styled.div`
 
   @media(max-width: 768px) {
     margin-top: 1rem;
-    height: 70vh;
+    height: 75vh;
 
-    
+    // background-image: none;
+    background-image:  url(./banner_bg.png);
+    background-position: bottom;
+    background-size: cover;
 
     .contentBox {
       width: 100%;
+      margin-top: -12rem;
       .about {
-        width: 100%;
-        font-size: 1rem;
+        width: 70%;
+        font-size: 0.8rem;
+        font-weight: 500;
         line-height: 1.5;
         margin-top: 1rem;
         color: ${({ theme }) => theme.text};
+        // background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2))
       }
 
       .hi {

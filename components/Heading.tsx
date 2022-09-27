@@ -14,8 +14,8 @@ const Heading = (props: headingProp) => {
 
 
 const Container = styled.div`
-  width: 74%;
-  margin: 0 auto 10rem auto;
+  width: 90%;
+  margin: 0 auto 6rem auto;
 
   @media(max-width: 768px) {
     width: 100%;
@@ -28,7 +28,7 @@ const Header = styled.h2`
   color: ${({ theme }) => theme.text};
   margin-bottom: 2rem;
   line-height: 1;
-  font-size: 5rem;
+  font-size: 3.5rem;
 
   @media(max-width: 768px) {
     font-size: 2rem;

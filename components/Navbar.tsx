@@ -23,6 +23,9 @@ const Navbar = ({toggleTheme}:any) => {
           <Link href="/blog">
             <a className="navLink">Thoughts</a>
           </Link>
+          {/* <Link href="/blog">
+            <a className="navLink">About me!</a>
+          </Link> */}
         </div>
       </div>
     </NavBar>
@@ -40,21 +43,33 @@ const NavBar: any = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
   }
 
-  .navLogo {
-    font-weight: 900;
-    font-size: 1.5rem;
+  .logo {
+    // font-weight: 900;
+    // font-size: 1.5rem;
     margin: 0;
+    // color: ${({ theme }) => theme.brand};
+
+    background: linear-gradient(-15deg, ${({ theme }) => theme.brand}, ${({ theme }) => theme.text}, ${({ theme }) => theme.text}, ${({ theme }) => theme.brand});
+      background-size: 300%;
+      font-weight: 900;
+      text-transform: capitalize;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // animation: animated_text 8s ease-in-out infinite;
+      // -moz-animation: animated_text 8s ease-in-out infinite;
+      // -webkit-animation: animated_text 8s ease-in-out infinite;
   }
 
   .navLink {
     text-transform: capitalize;
     transition: all 0.3s ease-in;
-    font-size: 1.1rem;
-    font-weight: 900;
+    font-size: 1rem;
+    font-weight: 600;
+    // margin-left: 1rem;
     border-radius: 4px;
     border: solid 2px ${({ theme }) => theme.brand};
     padding: 5px 20px;
