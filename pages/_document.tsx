@@ -44,7 +44,8 @@ export default class MyDocument extends Document {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"></link>
+        {/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet" /> */}
         <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
         <link href="/static/favicons/site.webmanifest" rel="manifest" />
         <link
