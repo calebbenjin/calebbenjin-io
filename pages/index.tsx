@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 import { sortByDate } from '../lib'
 import project1 from '../public/pro1.png'
 import project2 from '../public/project2.png'
+import ContactSection from '../components/ContactSection'
 
 const project1Img = "https://i.ibb.co/BK1Hn0x/Screenshot-2022-08-08-at-4-05-48-PM.png"
 
@@ -132,6 +133,7 @@ const Home: NextPage = ({posts}:any) => {
   return (
     <Layout>
       <Hero />
+      <ContactSection />
     </Layout>
   )
 }

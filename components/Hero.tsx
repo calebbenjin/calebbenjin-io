@@ -13,7 +13,7 @@ const Hero = () => {
             <h1 className="greet">Hi there, I&apos;m</h1>
             <h1 className="name">Caleb Benjamin</h1>
             <h1 className="title">Frontend Engineer</h1>
-            <p className="about">I write code, think about great designs, Founder of FrontendProf, Content Creator, Technical Writer. <br /> I am passionate about solving business problems through human-centered design. <br /> Currently open for a Developer Advocate role.</p>
+            <p className="about">I write code, think about great designs, founder of FrontendProf, Content Creator, Technical Writer. Blockchain enthusiast <br /> I am passionate about solving business problems through human-centered design. <br /> Currently open for a Developer Advocate role.</p>
             {/* <p className="about">I write code, think about great designs, Founder of FrontendProf, Content Creator, Technical Writer. <br /> I am passionate about building great products. <br /> I love being part of a team, whilst enjoying the autonomous nature of working remotely. <br /> I am currently open for a Developer Advocate role.</p> */}
             
             <div className="buttonFooter">
