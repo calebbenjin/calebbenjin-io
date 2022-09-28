@@ -296,10 +296,9 @@ const Section = styled.section`
     align-items: center;
     justify-content: center;
 
-    
-
     @media screen and (max-width: 479px) {
-      height: 50%;
+      height: 100%;
+      padding: 3rem 0;
     }
 
     .imgContainer {
@@ -317,10 +316,6 @@ const Section = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-  
-      @media screen and (max-width: 479px) {
-        height: 50%;
       }
     }
   }
