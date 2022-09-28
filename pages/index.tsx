@@ -10,6 +10,7 @@ import { sortByDate } from '../lib'
 import project1 from '../public/pro1.png'
 import project2 from '../public/project2.png'
 import ContactSection from '../components/ContactSection'
+import Footer from '../components/Footer'
 
 const project1Img = "https://i.ibb.co/BK1Hn0x/Screenshot-2022-08-08-at-4-05-48-PM.png"
 
@@ -134,6 +135,7 @@ const Home: NextPage = ({posts}:any) => {
     <Layout>
       <Hero />
       <ContactSection />
+      <Footer />
     </Layout>
   )
 }

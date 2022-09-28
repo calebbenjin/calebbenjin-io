@@ -4,62 +4,29 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <FooterSection>
-     <div className="container">
-     <div>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
+      <div className="container">
+        <small>Designed and developed with ❤ by Caleb Benjamin. {new Date().getFullYear()} All rights reserved</small>
       </div>
-      <div>
-        <Link href="https://github.com/calebbenjin">
-          <a target="_blank">GitHub</a>
-        </Link>
-        <Link href="https://twitter.com/calebbenjin">
-          <a target="_blank">Twitter</a>
-        </Link>
-        <Link href="https://www.instagram.com/calebbenjin">
-          <a target="_blank">Instagram</a>
-        </Link>
-        <Link href="https://www.linkedin.com/in/calebbenjin/">
-          <a target="_blank">Linkedin</a>
-        </Link>
-      </div>
-      <div>
-        <Link href="/snippets">
-          <a>Code Snippets</a>
-        </Link>
-        <Link href="/tweets">
-          <a>Tweets</a>
-        </Link>
-        <Link href="/projects">
-          <a>Projects</a>
-        </Link>
-      </div>
-     </div>
     </FooterSection>
   )
 }
 
 const FooterSection = styled.footer`
-  border-top: solid 1px #d6d6d6;
-  margin-top: 4rem;
+  padding-top: 1rem;
+  background: ${({ theme }) => theme.brand};
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 2rem 0 3rem;
+    width: 60%;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: solid 1px ${({ theme}) => theme.background};
+
+    @media screen and (max-width: 479px) {
+      width: 80%;
+      padding: 1rem 0;
+    }
   }
 
-  div a{
-    display: block;
-    line-height: 2.5;
-  }
 `;
 
 export default Footer
