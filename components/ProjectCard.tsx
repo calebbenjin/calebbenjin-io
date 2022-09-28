@@ -12,40 +12,43 @@ const Projects = ({project}:any) => {
       <Divider>
         <div className="line"></div>
         <p>Development & Design</p>
-      </Divider>  
-      <Content>
-        <h2>{project.name}</h2>
-        <p>{project.des}</p>
-        <div>
-          {project.task.map((task: any) => (
-            <li key={task.id}>{task.title}</li>
-          ))}
-        </div>
-        <div className="tech">
-          {project.tech.map((tech: any) => (
-            <span key={tech.id} className="tech">{tech.name}</span>
-          ))}
-        </div>
-      </Content>
-      
-      <ImageBox>
-        <ImageContainer>
-          <Image src={project.image} alt="project-image" layout="fill" />
-        </ImageContainer>
-        <div className="overlay-container overlay">
-          <div className="box">
-            <button className="web-btn btn">
-              <Link href={project.url}><a target="_blank">Visit website</a></Link>
-            </button>
-            <button className="case-btn btn">
-              <Link href={`/projects/${project.slug}`}>Github repo</Link>
-            </button>
-            {/* <button className="case-btn btn">
-              <Link href={`/projects/${project.slug}`}>View Case Study</Link>
-            </button> */}
+      </Divider>
+      <CardFlex>
+        <Content>
+          <h2>{project.name}</h2>
+          <p>{project.des}</p>
+          <div>
+            {project.task.map((task: any) => (
+              <li key={task.id}>{task.title}</li>
+            ))}
           </div>
-        </div>
-      </ImageBox>
+          <div className="tech">
+            {project.tech.map((tech: any) => (
+              <span key={tech.id} className="tech">{tech.name}</span>
+            ))}
+          </div>
+        </Content>
+        
+        <ImageBox>
+          <ImageContainer>
+            <Image src={project.image} alt="project-image" layout="fill" />
+          </ImageContainer>
+          <div className="overlay-container overlay">
+            <div className="box">
+              <button className="web-btn btn">
+                <Link href={project.url}><a target="_blank">Visit website</a></Link>
+              </button>
+              <button className="case-btn btn">
+                <Link href={`/projects/${project.slug}`}>Github repo</Link>
+              </button>
+              {/* <button className="case-btn btn">
+                <Link href={`/projects/${project.slug}`}>View Case Study</Link>
+              </button> */}
+            </div>
+          </div>
+        </ImageBox>
+      </CardFlex>  
+      
     </Card>
   )
 }
@@ -66,6 +69,7 @@ const Card = styled.section`
     }
   }
 `;
+
 
 const Divider = styled.div`
   display: flex;
@@ -97,9 +101,15 @@ const Divider = styled.div`
   }
 `;
 
+const CardFlex = styled.div`
+  display: flex;
+  margin-top: 5rem;
+`
+
 const Content = styled.div`
   width: 73%;
   margin: 7rem auto 5rem auto;
+  padding: 0 3rem;
 
   h2 {
     font-size: 4rem;
@@ -143,7 +153,7 @@ const Content = styled.div`
 `
 
 const ImageContainer = styled.div`
-  height: 53rem;
+  height: 35rem;
   width: 100%;
   
 
