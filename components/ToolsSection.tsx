@@ -127,6 +127,7 @@ const Section = styled.section`
   @media screen and (max-width: 479px) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    height: 100%;
   }
   .leftSide {
     background: ${({ theme }) => theme.text};
@@ -147,6 +148,7 @@ const Section = styled.section`
 
     .contentContainer {
       width: 85%;
+      margin: 0 auto;
 
       @media screen and (max-width: 479px) {
         width: 80%;
@@ -184,6 +186,7 @@ const Section = styled.section`
 
       @media screen and (max-width: 479px) {
         position: static;
+        height: 200%;
       }
     }
 
@@ -203,6 +206,9 @@ const Section = styled.section`
 
       @media screen and (max-width: 479px) {
         border: none;
+        padding: 0;
+        border-radius: 0px;
+        width: 100%;
       }
       
       .aboutBody {
@@ -224,7 +230,7 @@ const Section = styled.section`
           grid-gap: 2rem;
         }
         @media screen and (max-width: 479px) {
-          padding: 1rem;
+          padding: 0rem;
           grid-template-columns: repeat(1, 1fr);
           grid-gap: 2rem;
         }
@@ -263,12 +269,19 @@ const Section = styled.section`
       .icon {
         font-size: 2rem;
         margin: 0;
+        @media screen and (max-width: 479px) {
+          font-size: 1.7rem;
+        }
       }
 
       .cardTitle {
         font-size: 1.5rem;
         font-weight: 900;
         margin: 0;
+
+        @media screen and (max-width: 479px) {
+          font-size: 1.2rem;
+        }
       }
     }
   }

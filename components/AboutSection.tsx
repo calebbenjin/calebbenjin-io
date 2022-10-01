@@ -51,7 +51,7 @@ const Section = styled.section`
 
     @media screen and (max-width: 479px) {
       height: 100%;
-      padding: 1.5rem 0 2rem 0;
+      padding: 1.5rem 0 2rem 0;;
     }
 
     .contentContainer {
@@ -97,24 +97,6 @@ const Section = styled.section`
       padding: 3rem 0;
     }
 
-    .imgContainer {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      @media screen and (max-width: 991px) {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
 
     .aboutContainer {
       position: absolute;
@@ -129,6 +111,7 @@ const Section = styled.section`
         position: static;
         left: 0;
         right: 0;
+        padding-top: 0;
       }
     }
 
@@ -162,68 +145,11 @@ const Section = styled.section`
 
       @media screen and (max-width: 479px) {
         font-size: 1rem;
-        letter-spacing: 0.5px;
-        border: solid 0.5rem ${({ theme }) => theme.brand};
+        letter-spacing: 1px;
+        border: solid 0.5rem ${({ theme }) => theme.text};
+        width: 90%;
+        padding: 0;
       }
-    }
-  }
-
-  .buttonFooter {
-    position: absolute;
-    bottom: 5rem;
-    width: 100%;
-    display: flex;
-    align-text: center;
-    justify-content: center;
-
-    .flexContainer {
-      display: flex;
-      align-text: center;
-      justify-content: space-between;
-      width: 100%;
-
-      .reachBtn {
-        background: ${({ theme }) => theme.brand};
-        padding: 15px 30px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
-        text-transform: capitalize;
-        text-align: center;
-        @media screen and (max-width: 479px) {
-          width: 100%;
-        }
-      }
-      .workBtn {
-        background: ${({ theme }) => theme.text};
-        color: ${({ theme }) => theme.brand};
-        padding: 15px 30px;
-        font-weight: 900;
-        letter-spacing: 1.5px;
-        text-transform: capitalize;
-        margin-right: 20rem;
-        text-align: center;
-        @media screen and (max-width: 991px) {
-          margin-right: 3rem;
-        }
-        @media screen and (max-width: 479px) {
-          background: ${({ theme }) => theme.white};
-          color: ${({ theme }) => theme.text};
-          width: 100%;
-          margin-top: 1rem;
-        }
-      }
-
-      
-      @media screen and (max-width: 479px)  {
-        padding-top: 1rem;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    @media screen and (max-width: 479px) {
-      position: static;
-      bottom: 0rem;
     }
   }
 `;

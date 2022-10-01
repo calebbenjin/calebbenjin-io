@@ -1,6 +1,10 @@
 import styled from 'styled-components'
-import { FiLinkedin, FiClipboard } from 'react-icons/fi'
-import { FaTabletAlt, FaRegIdCard } from 'react-icons/fa'
+import { FiYoutube } from 'react-icons/fi'
+import { HiCode } from 'react-icons/hi'
+import { TiPen} from 'react-icons/ti'
+import { SiSpeedtest } from 'react-icons/si'
+import { FaRegIdCard, FaGithub } from 'react-icons/fa'
+import { MdAnimation, MdOutlineDesktopWindows } from 'react-icons/md'
 
 const MySkillSection = () => {
   return (
@@ -25,7 +29,7 @@ const MySkillSection = () => {
                 <h1 className="sectionTitle none">My Skill</h1>
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <MdAnimation className="icon" />
                   </div>
                   <h2 className="darkCardTitle">Animated Interactions</h2>
                   <p className="dark-text">I create animated micro-interactions usually to make things more engaging and less boring.</p>
@@ -35,7 +39,7 @@ const MySkillSection = () => {
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <MdOutlineDesktopWindows className="icon" />
                   </div>
                   <h2 className="cardTitle">Responsive Web Design</h2>
                   <p>I create layouts that adjust to any type of screen size, desktop, tablet or mobile.</p>
@@ -45,7 +49,7 @@ const MySkillSection = () => {
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <HiCode className="icon" />
                   </div>
                   <h2 className="darkCardTitle">Clean Code</h2>
                   <p className="dark-text">I write clean codes that is meantainable, scalable, and readable with good frontend architecture.</p>
@@ -55,7 +59,7 @@ const MySkillSection = () => {
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <SiSpeedtest className="icon" />
                   </div>
                   <h2 className="cardTitle">Unit Testing</h2>
                   <p>In my spare time, I love to share my knowledge, you will see some of best work at Hashnode.</p>
@@ -65,26 +69,27 @@ const MySkillSection = () => {
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <FaGithub className="icon" />
                   </div>
-                  <h2 className="darkCardTitle">Youtube Channel</h2>
+                  <h2 className="darkCardTitle">Version Control (Git)</h2>
                   <p className="dark-text">After I founded FrontendProf, I thought it will be a good idea to start a Youtube channel to create content and host live-stream for the community.</p>
                 </div>
               </div>
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <TiPen className="icon" />
                   </div>
                   <h2 className="cardTitle">Technical Writer</h2>
                   <p>In my spare time, I love to share my knowledge, you will see some of best work at Hashnode.</p>
                 </div>
               </div>
+              
 
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">
-                    <FiLinkedin className="icon" />
+                    <FiYoutube className="icon" />
                   </div>
                   <h2 className="darkCardTitle">Youtube Channel</h2>
                   <p className="dark-text">After I founded FrontendProf, I thought it will be a good idea to start a Youtube channel to create content and host live-stream for the community.</p>
@@ -178,8 +183,9 @@ const Section = styled.section`
         width: 80%;
         margin: 5rem auto 3rem auto;
       }
-      @media screen and (max-width: 991px) {
-        width: 90%;
+      @media screen and (max-width: 479px) {
+        width: 95%;
+        margin: 2rem auto 3rem auto;
       }
 
       .cardIcon {
@@ -207,6 +213,9 @@ const Section = styled.section`
         color: ${({ theme }) => theme.text};
         @media screen and (max-width: 991px) {
           color: ${({ theme }) => theme.white};
+        }
+        @media screen and (max-width: 479px) {
+          color: ${({ theme }) => theme.text};
         }
       }
 
