@@ -118,7 +118,7 @@ export default class MyDocument extends Document {
             content="https://res.cloudinary.com/calebbenjin/image/upload/v1663540291/1imagepng_pvi2nk.png"
           ></meta>
       </Head>
-      <body className="bg-white dark:bg-black text-white dark:text-black">
+      <body>
         <Main />
         <NextScript />
       </body>

@@ -47,11 +47,30 @@ const MySkillSection = () => {
                   <div className="cardIcon">
                     <FiLinkedin className="icon" />
                   </div>
-                  <h2 className="darkCardTitle">Founder of FrontendProf</h2>
-                  <p className="dark-text">A community that house over 2k frontend engineers, mentoring and hosting bootcamps, is my way to give back to the community</p>
+                  <h2 className="darkCardTitle">Clean Code</h2>
+                  <p className="dark-text">I write clean codes that is meantainable, scalable, and readable with good frontend architecture.</p>
                 </div>
               </div>
 
+              <div className="cardLayout">
+                <div className="card">
+                  <div className="cardIcon">
+                    <FiLinkedin className="icon" />
+                  </div>
+                  <h2 className="cardTitle">Unit Testing</h2>
+                  <p>In my spare time, I love to share my knowledge, you will see some of best work at Hashnode.</p>
+                </div>
+              </div>
+
+              <div className="cardLayout">
+                <div className="card">
+                  <div className="cardIcon">
+                    <FiLinkedin className="icon" />
+                  </div>
+                  <h2 className="darkCardTitle">Youtube Channel</h2>
+                  <p className="dark-text">After I founded FrontendProf, I thought it will be a good idea to start a Youtube channel to create content and host live-stream for the community.</p>
+                </div>
+              </div>
               <div className="cardLayout">
                 <div className="card">
                   <div className="cardIcon">

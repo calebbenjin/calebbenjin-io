@@ -322,7 +322,7 @@ const Section = styled.section`
 
   .buttonFooter {
     position: absolute;
-    bottom: 5rem;
+    bottom: 3rem;
     width: 100%;
     display: flex;
     align-text: center;

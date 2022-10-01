@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import { FiTwitter, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
+import { DiJavascript1 } from 'react-icons/di'
+import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiCss3, SiRedux, SiAmazonaws, SiGatsby, SiStorybook, SiJest, SiNodedotjs, SiMongodb } from 'react-icons/si'
 
 const ToolsSection = () => {
   return (
@@ -14,57 +16,85 @@ const ToolsSection = () => {
                   <div className="aboutBody">
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
+                        <SiJavascript className="icon" />
                         <h3 className="cardTitle">JavaScript</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
+                        <SiTypescript className="icon" />
                         <h3 className="cardTitle">TypeScript</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
-                        <h3 className="cardTitle">React.JS</h3>
+                        <SiReact className="icon" />
+                        <h3 className="cardTitle">React</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
-                        <h3 className="cardTitle">Next.JS</h3>
+                        <SiNextdotjs className="icon" />
+                        <h3 className="cardTitle">Next</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
-                        <h3 className="cardTitle">Node.JS</h3>
-                      </div>
-                      <p>My main design tool mostly for collaboration and for its different design elements</p>
-                    </div>
-                    <div className="card">
-                      <div className="cardHead">
-                        <FiLinkedin className="icon" />
+                        <SiCss3 className="icon" />
                         <h3 className="cardTitle">CSS</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
-                        <h3 className="cardTitle">Next.JS</h3>
+                        <SiRedux className="icon" />
+                        <h3 className="cardTitle">Redux</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
                     <div className="card">
                       <div className="cardHead">
-                        <FiLinkedin className="icon" />
-                        <h3 className="cardTitle">Next.JS</h3>
+                        <SiAmazonaws className="icon" />
+                        <h3 className="cardTitle">AWS</h3>
+                      </div>
+                      <p>My main design tool mostly for collaboration and for its different design elements</p>
+                    </div>
+                    <div className="card">
+                      <div className="cardHead">
+                        <SiGatsby className="icon" />
+                        <h3 className="cardTitle">Gastby</h3>
+                      </div>
+                      <p>My main design tool mostly for collaboration and for its different design elements</p>
+                    </div>
+                    <div className="card">
+                      <div className="cardHead">
+                        <SiStorybook className="icon" />
+                        <h3 className="cardTitle">Storybook</h3>
+                      </div>
+                      <p>My main design tool mostly for collaboration and for its different design elements</p>
+                    </div>
+                    <div className="card">
+                      <div className="cardHead">
+                        <SiJest className="icon" />
+                        <h3 className="cardTitle">Jest</h3>
+                      </div>
+                      <p>My main design tool mostly for collaboration and for its different design elements</p>
+                    </div>
+                    <div className="card">
+                      <div className="cardHead">
+                        <SiNodedotjs className="icon" />
+                        <h3 className="cardTitle">Node</h3>
+                      </div>
+                      <p>My main design tool mostly for collaboration and for its different design elements</p>
+                    </div>
+                    <div className="card">
+                      <div className="cardHead">
+                        <SiMongodb className="icon" />
+                        <h3 className="cardTitle">MongoDB</h3>
                       </div>
                       <p>My main design tool mostly for collaboration and for its different design elements</p>
                     </div>
@@ -87,10 +117,13 @@ const ToolsContainer = styled.div`
 
 const Section = styled.section`
   position: relative;
-  height: 200vh;
+  // height: 200vh;
   display: grid;
   height: 100%;
   grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 991px) {
+    height: 250vh;
+  }
   @media screen and (max-width: 479px) {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -104,7 +137,7 @@ const Section = styled.section`
     justify-content: center;
 
     @media screen and (max-width: 991px) {
-      height: 190vh;
+      height: 250vh;
     }
 
     @media screen and (max-width: 479px) {
@@ -198,7 +231,7 @@ const Section = styled.section`
 
         p {
           color: ${({ theme }) => theme.text};
-          padding: 1rem 0;
+          padding: 0;
           line-height: 1.5;
         }
       }
@@ -219,7 +252,7 @@ const Section = styled.section`
     background: ${({ theme }) => theme.brand};
     color: ${({ theme }) => theme.text};
     border-radius: 20px;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     box-shadow: rgba(254, 212, 58, 0.2) 11px 11px 30px 0px;
 
     .cardHead {
@@ -228,7 +261,7 @@ const Section = styled.section`
       justify-content: space-between;
 
       .icon {
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 0;
       }
 
