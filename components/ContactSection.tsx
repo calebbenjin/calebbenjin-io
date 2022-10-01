@@ -53,6 +53,7 @@ const ContactSection = () => {
 }
 
 const Section = styled.section`
+  box-shadow: rgba(0, 0, 0, 0.15) 14px 14px 40px 0px;
   height: 100%;
   background: ${({ theme }) => theme.brand};
   
