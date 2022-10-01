@@ -15,7 +15,7 @@ const MySkillSection = () => {
           <div className="cardContainer">
             <div className="cardRow">
               <div className="cardLayout">
-              <h1 className="sectionTitle">My Skill</h1>
+              <h1 className="sectionTitle">My Skills</h1>
                 <div className="card">
                   <div className="cardIcon">
                     <FaRegIdCard className="icon" />

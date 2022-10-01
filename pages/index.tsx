@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
 import fs from "fs"
+import { useState } from 'react'
 import path from "path"
 import matter from 'gray-matter'
 import Hero from '../components/Hero'
-import ProjectList from '../components/ProjectList'
-import BlogList from '../components/BlogList'
 import Layout from '../components/Layout'
 import { sortByDate } from '../lib'
 import project1 from '../public/pro1.png'
@@ -14,6 +13,8 @@ import Footer from '../components/Footer'
 import AboutSection from '../components/AboutSection'
 import ToolsSection from '../components/ToolsSection'
 import MySkillSection from '../components/MySkillSection'
+import MyWorkSection from '../components/MyWorkSection'
+import Loading from '../components/Loading'
 
 const project1Img = "https://i.ibb.co/BK1Hn0x/Screenshot-2022-08-08-at-4-05-48-PM.png"
 
@@ -134,9 +135,12 @@ const packages = {
 };
 
 const Home: NextPage = ({posts}:any) => {
+  
+  
   return (
     <Layout>
       <Hero />
+      <MyWorkSection />
       <MySkillSection />
       <ToolsSection />
       <AboutSection />
