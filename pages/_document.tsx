@@ -82,40 +82,40 @@ export default class MyDocument extends Document {
           name="google-site-verification"
         />
 
-<link rel="shortcut icon" href="/public/favicon.ico" />
+          <link rel="shortcut icon" href="/public/favicon.ico" />
           <link rel="icon" href="/favicon.ico" />
-          <meta name="description" content="" />
+          <meta name="description" content="I write code, think about great designs, founder of FrontendProf, Content Creator, Technical Writer. I am passionate about solving business problems through human-centered design." />
 
           {/*<!-- Google / Search Engine Tags -->*/}
-          <meta itemProp="name" content="Groove" />
-          <meta itemProp="description" content="" />
+          <meta itemProp="name" content="Caleb Benjamin Portfolio" />
+          <meta itemProp="description" content="I write code, think about great designs, founder of FrontendProf, Content Creator, Technical Writer. I am passionate about solving business problems through human-centered design." />
           <meta
             itemProp="image"
-            content="https://res.cloudinary.com/calebbenjin/image/upload/v1663540291/1imagepng_pvi2nk.png"
+            content="https://res.cloudinary.com/calebbenjin/image/upload/v1665089575/Screenshot_128_jhoeym.png"
           />
 
           {/*<!-- Facebook Meta Tags -->*/}
-          <meta property="og:title" content="Groove" />
-          <meta property="og:description" content=" Groove Music App" />
+          <meta property="og:title" content="Caleb Benjamin Portfolio" />
+          <meta property="og:description" content="I write code, think about great designs, founder of FrontendProf, Content Creator, Technical Writer. I am passionate about solving business problems through human-centered design." />
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/calebbenjin/image/upload/v1663540291/1imagepng_pvi2nk.png"
+            content="https://res.cloudinary.com/calebbenjin/image/upload/v1665089575/Screenshot_128_jhoeym.png"
           />
-          <meta property="og:url" content="Groove" />
+          <meta property="og:url" content="https://calebbenjin.vercel.app/" />
           <meta property="og:type" content="website" />
 
           {/*<!-- Twitter Meta Tags -->*/}
-          <meta name="twitter:title" content="Groove" />
-          <meta name="twitter:description" content="Groove Music App" />
+          <meta name="twitter:title" content="Caleb Benjamin Portfolio" />
+          <meta name="twitter:description" content="I write code, think about great designs, founder of FrontendProf, Content Creator, Technical Writer. I am passionate about solving business problems through human-centered design." />
           <meta
             name="twitter:image"
-            content="https://res.cloudinary.com/calebbenjin/image/upload/v1663540291/1imagepng_pvi2nk.png"
+            content="https://res.cloudinary.com/calebbenjin/image/upload/v1665089575/Screenshot_128_jhoeym.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
 
           <meta
             property="og:image"
-            content="https://res.cloudinary.com/calebbenjin/image/upload/v1663540291/1imagepng_pvi2nk.png"
+            content="https://res.cloudinary.com/calebbenjin/image/upload/v1665089575/Screenshot_128_jhoeym.png"
           ></meta>
       </Head>
       <body>
