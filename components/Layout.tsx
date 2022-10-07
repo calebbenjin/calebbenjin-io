@@ -51,7 +51,7 @@ const DevelopmentCard = styled.div`
 
   @media screen and (max-width: 479px) {
     h2 {
-      color: #fff;
+      color: #333;
       background: ${({ theme }) => theme.brand};
       padding: 5px;
       font-size: 0.8rem;
