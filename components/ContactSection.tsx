@@ -4,7 +4,7 @@ import { FiTwitter, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
 
 const ContactSection = () => {
   return (
-    <Section>
+    <Section id="contact">
       <div className="container">
         <Title>Reach Out To Me !!!</Title>
         <p className="subTitle">Go ahead... Don&apos;t be shy</p>

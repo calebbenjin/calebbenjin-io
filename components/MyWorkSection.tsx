@@ -6,7 +6,7 @@ import Link from 'next/link'
 const MyWorkSection = () => {
   return (
     <>
-      <SkillContainer>
+      <SkillContainer id="work">
         <Section>
         <div className="contentContainer">
           <div className="cardContainer">
@@ -35,59 +35,6 @@ const MyWorkSection = () => {
               
               <div className="cardLayout cardLayout2">
                 <h1 className="sectionTitle none">My Skill</h1>
-                <div className="imageCard">
-                  <Image src={projectImage} alt="Pay.com Image" width="600" height="450" />
-                </div>
-              </div>
-              <div className="cardLayout">
-                <div className="card">
-                  <h1 className="projectTitle"><span>01.</span> Pay.com</h1>
-                  <h4 className="subTitle">Accept payments online</h4>
-                  <p className="des">Led the full design process on a multi million dollar domain for a fintech company that is redefining the world of payments.</p>
-
-                  <div className="role">
-                    <p><strong>Role :</strong> Frontend Development & SEO.</p>
-                    <p><strong>Stacks :</strong> Nextjs, TypeScript, ThemeUI, Redux, Unit-Test</p>
-                  </div>
-                  <div className="footerBottons">
-                    <Link href="/">
-                      <a className="siteBtn">Go To Website</a>
-                    </Link>
-                    <Link href="/">
-                      <a className="caseBtn">Case-Study coming soon</a>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="cardLayout cardLayout2">
-                <div className="imageCard">
-                  <Image src={projectImage} alt="Pay.com Image" width="600" height="450" />
-                </div>
-              </div>
-              
-              <div className="cardLayout">
-                <div className="card">
-                  <h1 className="projectTitle"><span>01.</span> Pay.com</h1>
-                  <h4 className="subTitle">Accept payments online</h4>
-                  <p className="des">Led the full design process on a multi million dollar domain for a fintech company that is redefining the world of payments.</p>
-
-                  <div className="role">
-                    <p><strong>Role :</strong> Frontend Development & SEO.</p>
-                    <p><strong>Stacks :</strong> Nextjs, TypeScript, ThemeUI, Redux, Unit-Test</p>
-                  </div>
-                  <div className="footerBottons">
-                    <Link href="/">
-                      <a className="siteBtn">Go To Website</a>
-                    </Link>
-                    <Link href="/">
-                      <a className="caseBtn">Case-Study coming soon</a>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="cardLayout cardLayout2">
                 <div className="imageCard">
                   <Image src={projectImage} alt="Pay.com Image" width="600" height="450" />
                 </div>

@@ -15,6 +15,9 @@ const Layout: NextPage = ({title, keyword, description, children}:any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
+        <DevelopmentCard>
+          <h2>🛠 😍Still under Development...</h2>
+        </DevelopmentCard>
         {children}
       </Main>
     </React.Fragment>
@@ -26,6 +29,34 @@ const Main = styled.main`
   margin: 0 0 0 auto;
   @media screen and (max-width: 991px) {
     width: 100%;
+  }
+`
+const DevelopmentCard = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: #fff;
+    background: ${({ theme }) => theme.text};
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 479px) {
+    h2 {
+      color: #fff;
+      background: ${({ theme }) => theme.brand};
+      padding: 5px;
+      font-size: 0.8rem;
+      margin-top: -0.3rem;
+    }
   }
 `
 

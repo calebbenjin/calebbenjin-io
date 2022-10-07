@@ -26,16 +26,16 @@ const Navbar = ({toggleTheme}:any) => {
             {/* <Link href="/">
               <a className="navLink">Caleb.</a>
             </Link> */}
-            <Link href="/blog">
+            <Link href="https://calebbenjin.hashnode.dev">
               <a className="navLink">Blog</a>
             </Link>
-            <Link href="/blog">
+            <Link href="#work">
               <a className="navLink">Work</a>
             </Link>
-            <Link href="/blog">
+            <Link href="#about">
               <a className="navLink">About</a>
             </Link>
-            <Link href="/blog">
+            <Link href="#contact">
               <a className="navLink">Contact</a>
             </Link>
           </div>

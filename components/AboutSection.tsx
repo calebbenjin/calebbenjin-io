@@ -6,7 +6,7 @@ import Link from 'next/link'
 const AboutSection = () => {
   return (
     <>
-      <AboutContainer>
+      <AboutContainer id="about">
         <Section>
           <div className="leftSide">
             <div className="contentContainer">

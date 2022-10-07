@@ -18,10 +18,10 @@ const Hero = () => {
             
             <div className="buttonFooter">
               <div className="flexContainer">
-                <Link href="/">
+                <Link href="#contact">
                   <a className="reachBtn">React out to me</a>
                 </Link>
-                <Link href="/">
+                <Link href="#work">
                   <a className="workBtn">View my works</a>
                 </Link>
               </div>
